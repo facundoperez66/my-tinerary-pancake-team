@@ -222,4 +222,4 @@ let dataCities = [
 ]
 
 
-export default data
+export default dataCities
