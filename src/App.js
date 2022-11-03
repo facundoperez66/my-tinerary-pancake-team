@@ -1,12 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Main from './layouts/Main/Main';
 function App() {
   return (
-    <div>
-      AAAAA
-    </div>
-
+    <>
+    <Main></Main>
+   
+    </>
   );
 }
 

@@ -1,4 +1,4 @@
-let datahotels = [
+let dataHotels = [
     {
         id: "ho1",
         name: "Ibis Paris Tour Eiffel Cambronne 15ème ",
@@ -229,4 +229,4 @@ let datahotels = [
     },
 ]
 
-export default data
+export default dataHotels
