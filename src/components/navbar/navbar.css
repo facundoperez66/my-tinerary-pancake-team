@@ -12,8 +12,8 @@
 }
 
 nav {
-    width: 98.25%;
-    height: 5rem;
+    width: 100%;
+    height: 6rem;
     background-color: #004BA8;
     display: flex;
     justify-content: space-between;

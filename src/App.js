@@ -1,14 +1,14 @@
 import './App.css';
-import Main from './layouts/Main1';
-
+import Main from './layouts/Main/Main';
+import Main1 from './layouts/Main1'
 function App() {
 
   return (
-    <div className="App">
-      <Main />
-      
-    
-   </div>
+    <>
+    <Main1 />
+    <Main></Main>
+   
+    </>
   );
 }
 

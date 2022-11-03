@@ -1,6 +1,6 @@
 import NavBar from "../components/navbar/Navbar"
 
-function Main(props) {
+function Main1(props) {
     return (
         <div className="w100 h100 flex column a-center">
             <div className=' gray flex column j-center a-center'>
@@ -18,4 +18,4 @@ function Main(props) {
 
 
 
-export default Main
+export default Main1
