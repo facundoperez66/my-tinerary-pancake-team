@@ -229,4 +229,4 @@ let dataHotels = [
     },
 ]
 
-export default data
+export default dataHotels
