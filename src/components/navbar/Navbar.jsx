@@ -1,49 +1,74 @@
-import React, {useState} from 'react';
-import './navbar.css'
-import Profiles from '../perfiles/Profiles';
+import React, { useState } from "react";
+import "./Navbar.css";
+import portrait from "../../img/portrait-01.jpg"
 
-const Navbar = () => {
-    // to change burger classes
-    const [burger_class, setBurgerClass] = useState("burger-bar unclicked")
-    const [menu_class, setMenuClass] = useState ("menu hidden")
-    const [isMenuClicked, setIsMenuClicked] = useState(false)
+const SideNavBar = () => {
+	const [isExpanded, setExpendState] = useState(false);
+	const menuItems = [
+		{
+			text: "Cities",
+			icon: "icons/tierra.svg" 
+		},
+		{
+			text: "Hotels",
+			icon: "icons/hotel.svg"
+		}
+	
+	];
+	return (
+		<div
+			className={
+				isExpanded
+					? "side-nav-container"
+					: "side-nav-container side-nav-container-NX"
+			}
+		>
+			<div className="nav-upper">
+				<div className="nav-heading">
+					{isExpanded && (
+						<div className="nav-brand">
+							<img src="icons/Logo.svg" alt="" srcset="" />
+							<h2>Barra de Navegacion</h2>
+						</div>
+					)}
+					<button
+						className={
+							isExpanded ? "hamburger hamburger-in" : "hamburger hamburger-out"
+						}
+						onClick={() => setExpendState(!isExpanded)}
+					>
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+				<div className="nav-menu">
+					{menuItems.map(({ text, icon }) => (
+						<a
+							className={isExpanded ? "menu-item" : "menu-item menu-item-NX"}
+							href="#"
+						>
+							<img className="menu-item-icon" src={icon} alt="KK" srcset="" />
+							{isExpanded && <p>{text}</p>}
+						</a>
+					))}
+				</div>
+			</div>
+			<div className="nav-footer">
+				{isExpanded && (
+					<div className="nav-details">
+						<img
+							className="nav-footer-avatar"
+							
+							alt=""
+							srcset=""
+						/>
+					</div>
+				)}
+				
+			</div>
+		</div>
+	);
+};
 
-
-    // toggle burger menu change
-    const updateMenu = () => {
-        if(!isMenuClicked) {
-            setBurgerClass("burger-bar clicked")
-            setMenuClass("menu visible")
-        }
-        else{
-            setBurgerClass("burger-bar unclicked")
-            setMenuClass("menu hidden")
-        }
-        setIsMenuClicked(!isMenuClicked)
-    }
-
-    return(
-<div style={{width: '100%', height: '100vh'}}>
-    <nav>
-        <div className="burger-menu" onClick={updateMenu}>
-<div className={burger_class} > </div>
-<div className={burger_class} ></div>
-<div className={burger_class} ></div>
-        </div>
-        </nav>
-        <Profiles />
-        <div className={menu_class}>
-        
-        </div>
-        </div>
-
-
-    )
-    
-}
-
-
-
-
-
-export default Navbar
+export default SideNavBar;

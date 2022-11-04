@@ -1,12 +1,13 @@
 import './App.css';
-import Main from './layouts/Main/Main';
-import Main1 from './layouts/Main1'
+
+import Home1 from './pages/Home/Home';
+
 function App() {
 
   return (
     <>
-    <Main1 />
-    <Main></Main>
+    <Home1 />
+   {/*  <Main></Main> */}
    
     </>
   );
