@@ -19,8 +19,8 @@ function profiles() {
         <div className={`dropdown-menu ${open? 'active': 'inactive' }`}>
           <h3>Hola!<br/><span>Bienvenidos</span></h3>
           <ul>
-            <DropdownItem img = {login} text = 'Log In'/>
-            <DropdownItem img = {register} text = 'Register'/>
+            <DropdownItem img = {login} text = 'Sign In'/>
+            <DropdownItem img = {register} text = 'Sign Up'/>
             
           </ul>
 
