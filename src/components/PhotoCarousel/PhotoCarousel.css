@@ -1,0 +1,17 @@
+:root {
+    --lighter: #FFFFFF;
+    --main: #3E78B2;
+    --expression: #004BA8;
+    --strong: #4A525A;
+    --live: #07070A;
+  }
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+.ImgContainer img{
+    width: 350px;
+    height: 300px;
+    border-radius: 10px;
+}
