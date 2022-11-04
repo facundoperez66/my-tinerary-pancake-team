@@ -3,9 +3,9 @@ import './Carousel.css'
 //import CardHotel from '../CardCarousel/CardHotel'
 import Flechas from '../Flechas/Flechas'
 import PhotoCarousel from '../PhotoCarousel/PhotoCarousel'
-import dataHotels from '../../datahotels'
+import dataHotels from '../../dataHotels'
 import DataCardHotel from '../DataCardHotel/DataCardHotel'
-import dataCities from '../../datacities'
+import dataCities from '../../dataCities'
 export default function Carousel() {
 let [numeroACambiar,setNumeroACambiar]= useState(0)
 

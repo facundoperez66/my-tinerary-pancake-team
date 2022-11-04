@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./Navbar.css";
-import portrait from "../../img/portrait-01.jpg"
+import "./navbar.css";
+
 
 const SideNavBar = () => {
 	const [isExpanded, setExpendState] = useState(false);
@@ -46,7 +46,7 @@ const SideNavBar = () => {
 					{menuItems.map(({ text, icon }) => (
 						<a
 							className={isExpanded ? "menu-item" : "menu-item menu-item-NX"}
-							href="#"
+							href="/"
 						>
 							<img className="menu-item-icon" src={icon} alt="KK" srcset="" />
 							{isExpanded && <p>{text}</p>}
