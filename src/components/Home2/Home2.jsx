@@ -13,9 +13,7 @@ export default function Home2() {
         <Carousel>
 
         </Carousel>
-        <Footer>
-
-        </Footer>
+       
         
     </div>
     </>

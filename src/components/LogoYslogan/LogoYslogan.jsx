@@ -1,6 +1,6 @@
 import './LogoYslogan.css'
 import logo from "../../img/logoprov.png"
-
+import {Link as LinkRouter} from 'react-router-dom'
 
 export default function ContainerHome1(){
     return (
@@ -15,8 +15,10 @@ export default function ContainerHome1(){
 <p>"Everything for your next getaway"</p>
 </div>
 <div className= "ContenidoHome1-1" >
-<div className= "SelecHome1" ><p>Cities</p></div>
-<div className= "SelecHome1" ><p>Hotels</p></div>
+    <LinkRouter to='/Cities'>
+<div className= "SelecHome1" ><p>Cities</p></div></LinkRouter>
+<LinkRouter to='/Hotels'>
+<div className= "SelecHome1" ><p>Hotels</p></div></LinkRouter>
 
 </div>
 
