@@ -4,12 +4,14 @@ import LinkCitiesHotels from '../LinkCitiesHotels/LinkCitiesHotels'
 import ButtonToTop from '../ButtonToTop/ButtonToTop'
 import './Footer.css'
 export default function Footer() {
+
+  
   return (
     <>
     <div className='FooterContainer'>
         <LinkSocialNet/>
         <LinkCitiesHotels/>
-        <ButtonToTop/>
+        <ButtonToTop />
     </div>
     </>
   )

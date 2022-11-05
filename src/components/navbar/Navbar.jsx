@@ -6,8 +6,6 @@ import {Link as LinkRouter} from 'react-router-dom'
 const SideNavBar = () => {
 	const [isExpanded, setExpendState] = useState(false);
 	
-	
-	
 	return (
 		<div
 			className={

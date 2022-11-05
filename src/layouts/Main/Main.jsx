@@ -8,13 +8,10 @@ export default function Main(props) {
   return (
 
     <>
-     
-    <Header> </Header>
-    <div>{props.children} </div>
-    <Footer></Footer>  
-     
-    
-    
+    <Header/>
+    <div>{props.children}</div>
+    <Footer/>
+   
     </>
   )
 

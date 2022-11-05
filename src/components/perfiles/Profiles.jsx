@@ -4,7 +4,7 @@ import register from "../../img/register.png"
 import login from "../../img/login.png"
 import React, {useState} from 'react';
 
-function profiles() {
+function Profiles() {
 
   const [open, setOpen] = useState(false);
 
@@ -13,7 +13,7 @@ function profiles() {
       
       <div className='menu-container'>
         <div className='menu-trigger' onClick={()=>{setOpen(!open)}}>
-          <img src={portrait}></img>
+          <img src={portrait} alt='photography'></img>
         </div>
 
         <div className={`dropdown-menu ${open? 'active': 'inactive' }`}>
@@ -34,11 +34,11 @@ function profiles() {
 function DropdownItem(props){
   return(
     <li className = 'dropdownItem'>
-      <img src={props.img} ></img>
+      <img src={props.img} alt=''></img>
       <a> {props.text} </a>
 
     </li>
   )
 }
 
-export default profiles
+export default Profiles
