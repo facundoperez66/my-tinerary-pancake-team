@@ -1,15 +1,22 @@
 import './App.css';
 
 import Home1 from './pages/Home/Home';
-import Home2 from './components/Home2/Home2';
+import Main from './layouts/Main/Main';
+import NotFound from './pages/NotFound/NotFound';
+import {Routes,Route} from 'react-router-dom'
 function App() {
 
   return (
     <>
-    <Home1 />
-    <Home2 />
+    <Main>
+    <Routes> 
+    <Route path='/index' element={<Home1 />} />
+    <Route path='/notfound' element={<NotFound />} />
+    </Routes>
+    </Main>
     
-   {/*  <Main></Main> */}
+    
+   
    
     </>
   );
