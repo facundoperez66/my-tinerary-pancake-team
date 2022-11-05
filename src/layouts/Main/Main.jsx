@@ -1,8 +1,12 @@
 import React from 'react'
-import Header from '../../components/Header/Header'
+import Home2 from '../../components/Home2/Home2'
 import Footer from '../../components/Footer/Footer'
+import Header from '../../components/Header/Header'
+import './Main.css'
 export default function Main(props) {
+  console.log(props.children)
   return (
+
     <>
     <Header/>
     <div>{props.children}</div>
@@ -10,4 +14,17 @@ export default function Main(props) {
    
     </>
   )
+
+  
+
+
+ 
 }
+ 
+ /*    <>
+    <Header />
+    
+    <Footer />
+   
+    </>
+  ) */

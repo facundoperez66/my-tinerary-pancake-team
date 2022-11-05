@@ -8,12 +8,14 @@
 .side-nav-container {
     
 	background-color: var(--dark);
-	width: 300px;
+	width: 14rem;
 	height: 21rem;
 	position: absolute;
 	color: var(--light);
-
 	transition: 0.4s;
+	display: flex;
+	justify-content: center;
+	
 }
 .side-nav-container-NX {
 	width: 85px;
@@ -26,6 +28,10 @@
 .nav-footer {
 	
 	display: grid;
+}
+.menu-item button{
+	
+	cursor: pointer;
 }
 
 .nav-heading {
@@ -48,6 +54,7 @@
 	border: none;
 	cursor: pointer;
 	margin: auto;
+	
 }
 
 .hamburger span {
@@ -104,13 +111,15 @@
 .menu-item {
 	height: 57px;
 	display: flex;
+	align-items: center;
+	justify-content: center;
 	color: var(--light);
 	text-decoration: none;
 	text-transform: uppercase;
 	margin: auto 20px;
 	border-radius: 10px;
     
-    cursor: pointer;
+    
 }
 
 .menu-item-NX {
@@ -118,6 +127,7 @@
 }
 .menu-item:hover {
 	background-color: var(--primary);
+
     
 }
 .menu-item img {

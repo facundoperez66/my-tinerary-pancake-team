@@ -1,20 +1,11 @@
 import React, { useState } from "react";
-import "./navbar.css";
+import "./Navbar.css";
+import {Link as LinkRouter} from 'react-router-dom'
 
 
 const SideNavBar = () => {
 	const [isExpanded, setExpendState] = useState(false);
-	const menuItems = [
-		{
-			text: "Cities",
-			icon: "icons/tierra.svg" 
-		},
-		{
-			text: "Hotels",
-			icon: "icons/hotel.svg"
-		}
 	
-	];
 	return (
 		<div
 			className={
@@ -42,18 +33,24 @@ const SideNavBar = () => {
 						<span></span>
 					</button>
 				</div>
+
+
 				<div className="nav-menu">
-					{menuItems.map(({ text, icon }) => (
-						<a
-							className={isExpanded ? "menu-item" : "menu-item menu-item-NX"}
-							href="/"
-						>
-							<img className="menu-item-icon" src={icon} alt="KK" srcset="" />
-							{isExpanded && <p>{text}</p>}
-						</a>
-					))}
+<LinkRouter to="/Cities">
+<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/tierra.svg" alt="" />
+	 </button> 
+</div>
+</LinkRouter>
+<LinkRouter to="/Hotels">
+<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} > <button><img src="./icons/hotel.svg" alt="" />
+</button> 
+</div>
+</LinkRouter>
+						
 				</div>
 			</div>
+
+			
 			<div className="nav-footer">
 				{isExpanded && (
 					<div className="nav-details">
