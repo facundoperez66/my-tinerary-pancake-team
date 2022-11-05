@@ -4,7 +4,7 @@ import register from "../../img/register.png"
 import login from "../../img/login.png"
 import React, {useState} from 'react';
 
-function profiles() {
+function Profiles() {
 
   const [open, setOpen] = useState(false);
 
@@ -41,4 +41,4 @@ function DropdownItem(props){
   )
 }
 
-export default profiles
+export default Profiles

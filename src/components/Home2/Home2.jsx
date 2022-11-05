@@ -1,5 +1,5 @@
 import React from 'react'
-import Footer from '../Footer/Footer'
+
 import Carousel from '../Carousel/Carousel'
 import './Home2.css'
 export default function Home2() {
@@ -13,9 +13,7 @@ export default function Home2() {
         <Carousel>
 
         </Carousel>
-        <Footer>
-
-        </Footer>
+       
         
     </div>
     </>
