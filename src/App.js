@@ -5,6 +5,7 @@ import Cities from './pages/Cities/Cities';
 import Hotels from './pages/Hotels/Hotels';
 import Main from './layouts/Main/Main';
 import NotFound from './pages/NotFound/NotFound';
+import SignIn from './pages/SignIn/SignIn';
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
 <Route path='/Cities' element={<Cities />} />
 <Route path='/Hotels' element={<Hotels />} />
 <Route path='/notfound' element={<NotFound />} />
-
+<Route path='/SignIn' element={<SignIn/>}/>
 </Routes>
 
    </Main>

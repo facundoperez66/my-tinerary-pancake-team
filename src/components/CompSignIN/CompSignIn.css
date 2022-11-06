@@ -1,0 +1,82 @@
+:root {
+    --lighter: #FFFFFF;
+    --main: #3E78B2;
+    --expression: #004BA8;
+    --strong: #4A525A;
+    --live: #07070A;
+  }
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+.signin-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-color: var(--main);
+    
+}
+.form-signin{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+     
+}
+.form-signin label{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+.form-signin input{
+    width: 80%;
+    display: flex;
+    margin: 20px;
+    
+}
+.form-signin input[type="text"],
+.form-signin input[type="password"]{
+    border: none;
+    border-bottom: 1px solid var(--live);
+    background: transparent;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+
+}
+.form-signin input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: var(--live);
+    color: var(--lighter);
+    font-size: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+.img-sign img{
+    width: 100px;
+    border-radius: 80px;
+   
+}
+.bg-mountain{
+   
+    background-image: url(https://media.istockphoto.com/photos/aiguille-verte-and-the-mont-blanc-massif-picture-id172369233?b=1&k=20&m=172369233&s=612x612&w=0&h=qRn9ACaL5-DDGesKsuHJOkr0lv7n6jhYRClRfI-WgBI=);
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 200px;
+}
+.card-sign{
+    background-color: var(--lighter);
+    height: 550px;
+    width: 300px;
+    border-radius: 15px;
+}
