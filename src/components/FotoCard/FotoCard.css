@@ -1,0 +1,6 @@
+.PhotoCards img{
+    height: 15rem;
+    width: 100%;
+    padding: 15px;
+    border-radius: 2rem;
+}

@@ -5,13 +5,14 @@ import Cities from './pages/Cities/Cities';
 import Hotels from './pages/Hotels/Hotels';
 import Main from './layouts/Main/Main';
 import NotFound from './pages/NotFound/NotFound';
-
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 function App() {
 
   return (
     <>
 
 <Main>
+  <ScrollToTop />
 <Routes>
   
 <Route path='/index' element={<Home />} />

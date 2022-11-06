@@ -1,0 +1,35 @@
+
+.botonCard2{
+   height: 5rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+  
+}
+
+
+.UnderCard2{
+    height: 4rem;
+    padding: 10px;
+  
+}
+
+.botonCard2 button{
+    height: 50px;
+    width: 75px;
+}
+
+.card-Hotel{
+    background-color: #004BA8;
+    height: 30rem;
+    width: 25rem;
+    margin-top: 30px;
+    border-radius: 2rem;
+}
+
+
+.TituloCard2{
+    
+    height: 4rem;
+}
