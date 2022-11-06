@@ -1,0 +1,28 @@
+.contenedor-checkbox{
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1;
+    width: 20rem;
+}
+
+
+.Filtro1-checkbox{
+   
+    font-size: 0.6cm;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+.Filtro1-checkbox input{
+    margin-right: 15px;
+    height: 30px;
+    width: 30px;
+}
+
+
+
