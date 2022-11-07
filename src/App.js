@@ -6,13 +6,15 @@ import Hotels from './pages/Hotels/Hotels';
 import Main from './layouts/Main/Main';
 import NotFound from './pages/NotFound/NotFound';
 import SignIn from './pages/SignIn/SignIn';
-
+import SignUp from './pages/SignUp/SignUp';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 function App() {
 
   return (
     <>
 
 <Main>
+  <ScrollToTop />
 <Routes>
   
 <Route path='/index' element={<Home />} />
@@ -20,6 +22,7 @@ function App() {
 <Route path='/Hotels' element={<Hotels />} />
 <Route path='/notfound' element={<NotFound />} />
 <Route path='/SignIn' element={<SignIn/>}/>
+<Route path='/SignUp' element={<SignUp/>}/>
 </Routes>
 
    </Main>

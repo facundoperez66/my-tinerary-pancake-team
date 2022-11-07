@@ -1,0 +1,56 @@
+.CitiesMod{
+    
+    width: 100%;
+    min-height: 100vh;
+    
+}
+
+
+.FiltrosDis{
+    background-color: #3E78B2;
+  width: 40rem;
+  display: flex;
+  
+  
+}
+
+.ContenedorCards{
+    background-color: #3E78B2;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+}
+
+
+.ContenedorDeFiltros{
+    background-color: #3E78B2;
+    
+    height: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+
+}
+
+.ContenedorDeFiltros h2{
+    
+    height: 14rem;
+    font-size: 2cm;
+    
+}
+
+#site-search{
+
+    width: 20rem;
+    height: 3rem;
+font-size: larger ;
+}
+
+.Searchbar-filtro2{
+height: 3rem;
+
+}
