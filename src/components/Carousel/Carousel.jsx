@@ -3,7 +3,7 @@ import './Carousel.css'
 //import CardHotel from '../CardCarousel/CardHotel'
 import Flechas from '../Flechas/Flechas'
 import PhotoCarousel from '../PhotoCarousel/PhotoCarousel'
-import dataHotels from '../../dataHotels'
+import dataHotels from '../../datahotels'
 import DataCardHotel from '../DataCardHotel/DataCardHotel'
 import dataCities from '../../dataCities'
 export default function Carousel() {

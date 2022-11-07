@@ -10,6 +10,9 @@ import SignUp from './pages/SignUp/SignUp';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import Newcity from './pages/NewCity/Newcity';
 import NewHotel from './pages/NewHotel/NewHotel';
+import { DetailCity } from './pages/DetailCity/DetailCity';
+
+
 function App() {
 
   return (
@@ -27,13 +30,15 @@ function App() {
 <Route path='/SignUp' element={<SignUp/>}/>
 <Route path='/NewCity' element={<Newcity/>}/>
 <Route path='/NewHotel' element={<NewHotel/>}/>
+<Route path="/Cities/:id" element={<DetailCity />} />
+
 </Routes>
 
    </Main>
     
 
 
-   {/*  <Main></Main> */}
+   {/*  <Route path='/DetailCity/:id' element={<DetailCity />} /> */}
     
     
     
