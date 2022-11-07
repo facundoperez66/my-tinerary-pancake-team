@@ -9,7 +9,6 @@ export const DetailCity = () => {
 
 
 
-
     let [city, setCity] = useState([])
     let {id} = useParams()
 

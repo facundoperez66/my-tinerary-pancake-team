@@ -10,7 +10,7 @@ import ContinentDetailCity from '../ContinentDetailCity/ContinentDetailCity'
 import PopulationDetailCity from '../PopulationDetailCity/PopulationDetailCity'
 import { useState, useEffect, useCallback } from 'react';
 
-export default function DetailCityComponent(){  
+export default async function DetailCityComponent(){  
     
 
 const {id} = useParams
