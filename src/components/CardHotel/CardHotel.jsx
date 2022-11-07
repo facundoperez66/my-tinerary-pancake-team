@@ -1,6 +1,6 @@
 import './CardHotel.css'
 import dataCities from '../../dataCities'
-import dataHotels from '../../datahotels'
+import dataHotels from '../../dataHotels'
 import FotoCard from '../FotoCard/TituloyFotoCard'
 import TituloCard from '../TituloCard/TituloCard'
 import ContinenteCity from '../ContinenteCity/ContinenteCity'
