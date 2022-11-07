@@ -11,6 +11,7 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import Newcity from './pages/NewCity/Newcity';
 import NewHotel from './pages/NewHotel/NewHotel';
 import { DetailCity } from './pages/DetailCity/DetailCity';
+import { DetailHotel } from './pages/DetailHotel/DetailHotel'
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
 <Route path='/NewCity' element={<Newcity/>}/>
 <Route path='/NewHotel' element={<NewHotel/>}/>
 <Route path="/Cities/:id" element={<DetailCity />} />
+<Route path="/Hotels/:id" element={<DetailHotel />} />
 
 </Routes>
 
