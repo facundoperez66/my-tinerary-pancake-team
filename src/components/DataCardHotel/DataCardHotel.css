@@ -19,3 +19,11 @@
     height: 30px;
     border-radius: 5px;
   }
+  @media screen and (max-width:351px){
+    .DataCardHotel{
+      width: 250px;
+      justify-content: center;
+      display: flex;
+      
+    }
+  }

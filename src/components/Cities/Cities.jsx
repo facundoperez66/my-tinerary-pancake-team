@@ -41,30 +41,32 @@ let checkHandler = (e) => {
 <div className='CitiesMod'>
   
     <div className='ContenedorDeFiltros' >
-    <h2>CITIES</h2>
+      <div className='tilte-cities'>
+      <h2>CITIES</h2>
+      </div>
         <div  className='FiltrosDis'  >
-        <div className='contenedor-checkbox'>
-        <div className="Filtro1-checkbox">
-          <input  type="checkbox" onClick={checkHandler} id="ch1"  value="America" />America
-        </div>
+          <div className='contenedor-checkbox'>
+            <div className="Filtro1-checkbox">
+              <input  type="checkbox" onClick={checkHandler} id="ch1"  value="America" />America
+            </div>
         
-        <div className="Filtro1-checkbox">
-          <input type="checkbox" onClick={checkHandler} id="ch2"  value="Europe"  />Europe
-        </div>
-        <div className="Filtro1-checkbox">
-          <input type="checkbox" onClick={checkHandler} id="ch2"  value="Asia"  />Asia
-        </div>
-     </div>
+            <div className="Filtro1-checkbox">
+              <input type="checkbox" onClick={checkHandler} id="ch2"  value="Europe"  />Europe
+            </div>
+            <div className="Filtro1-checkbox">
+              <input type="checkbox" onClick={checkHandler} id="ch2"  value="Asia"  />Asia
+            </div>
+          </div>
      
-     <div className='Searchbar-filtro2'>
-<input onChange={(e) => setQuery(e.target.value)} type="search" id="site-search" name="Search" placeholder='City...'>
-</input>
+          <div className='Searchbar-filtro2'>
+            <input onChange={(e) => setQuery(e.target.value)} type="search" id="site-search" name="Search" placeholder='City...'>
+            </input>
 
 
 
-</div>
-</div>
-</div>
+          </div>
+      </div>
+    </div>
 
 <div className='ContenedorCards'>
     

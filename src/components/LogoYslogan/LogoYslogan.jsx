@@ -7,21 +7,23 @@ export default function ContainerHome1(){
     <>
     <div className= "ContainerHome1" >
         <div className= "ContenidoHome1">
-<h1>  My Tinerary</h1>
-<img src={logo}></img>
+            <div className='title-logo'>
+            <h1>My Tinerary</h1>
+            <img src={logo} alt='logo'></img>
+            </div>
+        </div>
+        <div className='text-linksch'>
+        <div className= "Home1p" >
+            <p>"Everything for your next getaway"</p>
+        </div>
+            <div className= "ContenidoHome1-1" >
+                <LinkRouter to='/Cities'>
+                <div className= "SelecHome1" ><p>Cities</p></div></LinkRouter>
+<               LinkRouter to='/Hotels'>
+                <div className= "SelecHome1" ><p>Hotels</p></div></LinkRouter>
 
-</div>
-<div className= "Home1p" >
-<p>"Everything for your next getaway"</p>
-</div>
-<div className= "ContenidoHome1-1" >
-    <LinkRouter to='/Cities'>
-<div className= "SelecHome1" ><p>Cities</p></div></LinkRouter>
-<LinkRouter to='/Hotels'>
-<div className= "SelecHome1" ><p>Hotels</p></div></LinkRouter>
-
-</div>
-
+            </div>
+        </div>
     </div>
     
     
