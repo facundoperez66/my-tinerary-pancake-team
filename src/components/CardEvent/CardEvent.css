@@ -1,0 +1,35 @@
+.card-topp{
+    
+    height: 45rem;
+    width: 60rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.card-topp img{
+    height: 40rem;
+    width: 40rem;
+    border-radius: 2rem;
+}
+
+.card-body{
+    width: 42%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    font-size: xx-large;
+    font-weight: bolder;
+    padding: 15px;
+
+}
+
+.card-body h3{
+    font-size: xx-large
+}
+
+.contenedoralgo{
+    display: flex;
+}
