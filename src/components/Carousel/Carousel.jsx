@@ -6,8 +6,35 @@ import PhotoCarousel from '../PhotoCarousel/PhotoCarousel'
 import dataHotels from '../../dataHotels'
 import DataCardHotel from '../DataCardHotel/DataCardHotel'
 import dataCities from '../../dataCities'
+import { useEffect } from 'react'
 export default function Carousel() {
 let [numeroACambiar,setNumeroACambiar]= useState(0)
+
+let [id, setId] = useState(0)
+
+useEffect(
+   ()=>{   let idInterval =    setInterval(
+
+    () => {
+      next()
+      console.log('Pasaron 5 segundos')
+    },
+
+    5000
+
+
+  )
+  setId(idInterval)
+return clearInterval(id)
+},[numeroACambiar]
+)
+
+
+
+
+
+
+
 
 let next = () =>{
   
@@ -16,6 +43,7 @@ let next = () =>{
   }else {
   setNumeroACambiar(0)
   }
+  clearInterval(id)
 }
 let prev = () =>{
   
@@ -24,6 +52,7 @@ let prev = () =>{
   }else {
   setNumeroACambiar(dataCities.length-1)
   }
+  clearInterval(id)
 }
   return (
     <div className='Carousel'>

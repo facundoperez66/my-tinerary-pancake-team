@@ -2,6 +2,8 @@ import './Cities.css'
 import CardCity from '../CardCity/CardCity'
 import dataCities from '../../dataCities'
 import { useState, useEffect, useCallback } from 'react';
+
+
 export default function ComponentesCities() {
 
   let [ciudades, setCiudades] = useState([])
