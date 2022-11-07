@@ -75,7 +75,7 @@ let dataHotels = [
                 "https://www.kkhotels.com/wp-content/uploads/2020/06/StudioGardenAccess.jpg",
                 "https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/271822004.jpg?k=d4aeb0ed02787064dcac3376d4e3c9ffb7e4e83abcce0050b3f5026b82b0f35b&o=",
         ],
-        capacity: "",
+        capacity: "2039",
         citiID: "city8",
         userId: ""
     },{
