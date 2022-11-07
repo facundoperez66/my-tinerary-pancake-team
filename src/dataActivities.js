@@ -7,7 +7,7 @@ let dataActivities = [
     description: "An original way to visit or explore the City of Light with family, friends or as a couple, promoting ecological transport.",
     price: "19 ",
     duration: "2 hours",
-    userId: ""
+    userId: "user1"
 }, {
 
     id: "it2",
@@ -17,7 +17,7 @@ let dataActivities = [
     description: "This unmissable event in the cultural life of the capital invites Parisians and tourists alike to walk around and discover works by national and international artists, free of charge.",
     price: "Free",
     duration: "All night",
-    userId: ""
+    userId: "user1"
 }, {
     id: "it3",
     cityId: "city3",
@@ -26,7 +26,7 @@ let dataActivities = [
     description: "Its programming is very varied, and includes from classical shows with the Royal Concertgebouw Orchestra to world music artists.",
     price: "14",
     duration: "2:45 hours",
-    userId: ""
+    userId: "user1"
 }, {
 
     id: "it4",
@@ -36,7 +36,7 @@ let dataActivities = [
     description: "It is a nightlife venue located at the top of the A'DAM tower that offers spectacular views of the illuminated urban landscape of Amsterdam.",
     price: "20",
     duration: "All night",
-    userId: ""
+    userId: "user1"
 }, {
 
     id: "it5",
@@ -46,7 +46,7 @@ let dataActivities = [
     description: "The guided tour of the Colosseum, Forum and Palatine is the ideal way to get to know the Italian capital, its main monuments and its exciting history. A journey of 2,000 years summed up in three hours.",
     price: "38",
     duration: "3 hours",
-    userId: ""
+    userId: "user1"
 }, {
     id: "it6",
     cityId: "city5",
@@ -55,7 +55,7 @@ let dataActivities = [
     description: "Enjoy an exclusive outdoor concert, with an aperitif of Italian food and wine on the terrace, served on the best rooftop terrace in Piazza Navona.",
     price: "30",
     duration: "1:20 hours",
-    userId: ""
+    userId: "user1"
 }, {
 
     id: "it7",
@@ -65,7 +65,7 @@ let dataActivities = [
     description: "Street parades, quirky costumes and live music on the last Sunday and Monday of August",
     price: "Free",
     duration: "2:30 hours",
-    userId: ""
+    userId: "user1"
 }, {
     id: "it8",
     cityId: "city8",
@@ -74,7 +74,7 @@ let dataActivities = [
     description: "This event organized by the Royal Society of Horticulture brings together the world's great landscapers who compete with each other to get the best flower gardens.",
     price: "25",
     duration: "12 hours",
-    userId: ""
+    userId: "user1"
 }, {
 
     id: "it9",
@@ -84,7 +84,7 @@ let dataActivities = [
     description: "If you fancy spending the day in Vienna soaking up the sun and taking a dip, the narrow island in the Danube, or Donauinsel, is a great option.",
     price: "12",
     duration: "All day",
-    userId: ""
+    userId: "user1"
 }, {
 
     id: "it10",
@@ -94,7 +94,7 @@ let dataActivities = [
     description: "A giant screen is installed where many of its most popular shows can be followed for free",
     price: "Free",
     duration: "5 hours",
-    userId: ""
+    userId: "user1"
 }, {
 
 
@@ -105,7 +105,7 @@ let dataActivities = [
     description: "It is an elegant structure of columns, inspired by the Acropolis of Athens, crowned by the statue of the goddess of victory on a chariot pulled by four horses.",
     price: "5",
     duration: "14 hours",
-    userId: ""
+    userId: "user1"
 }, {
     id: "it12",
     cityId: "city6",
@@ -114,7 +114,7 @@ let dataActivities = [
     description: "The Berlin Wall Memorial is dedicated to the 28 years that the German capital was separated and to the multitude of people who died as a result of this division.",
     price: "Free",
     duration: "14 hours",
-    userId: ""
+    userId: "user1"
 },
 ]
 export default dataActivities
