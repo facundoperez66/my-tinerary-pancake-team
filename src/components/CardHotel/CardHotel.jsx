@@ -1,10 +1,12 @@
 import './CardHotel.css'
 import dataCities from '../../dataCities'
+import dataHotels from '../../datahotels'
 import FotoCard from '../FotoCard/TituloyFotoCard'
 import TituloCard from '../TituloCard/TituloCard'
 import ContinenteCity from '../ContinenteCity/ContinenteCity'
 import PopulationCity from '../PopulationCity/PopulationCity'
 import Capacity from '../CapacityCard/Capacity'
+import {Link as LinkRouter} from 'react-router-dom'
 
 
 export default function CardHotel({ datos }) {
@@ -24,9 +26,13 @@ export default function CardHotel({ datos }) {
                
               
                 </div>
+
+                {dataHotels.map( everyHotel =>
+                <LinkRouter to={`/Hotels/${everyHotel.id}`} key={everyHotel.id}>
                   <div className='botonCard2'  >
                     <button>More</button>
                    </div>  
+                   </LinkRouter> )}
             </div>
 
 
