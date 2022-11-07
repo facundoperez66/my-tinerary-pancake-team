@@ -8,7 +8,7 @@ let dataHotels = [
         ],
         capacity: "1500",
         citiID: "city1",
-        userId: ""
+        userId: "admin1"
     },{
         id: "ho2",
         name: "Atlantis Dubai Hotel",
@@ -17,7 +17,7 @@ let dataHotels = [
                 "https://i.pinimg.com/originals/fc/0e/67/fc0e672a8207e855e3dbeaf87c96f103.jpg"],
         capacity: "10000",
         citiID: "city2",
-        userId: ""
+        userId: "admin1"
     },{
         id: "ho3",
         name: "Mövenpick Hotel Amsterdam City Centre",
@@ -27,7 +27,7 @@ let dataHotels = [
             ],
         capacity: "2000",
         citiID: "city3",
-        userId: ""
+        userId: "admin1"
     },{
         id: "ho4",
         name: "The Principal Madrid Hotel",
@@ -37,7 +37,7 @@ let dataHotels = [
         ],
         capacity: "3500",
         citiID: "city4",
-        userId: ""
+        userId: "admin1"
     },{
         id: "ho5",
         name: "NH Collection Roma Giustiniano",
@@ -47,7 +47,7 @@ let dataHotels = [
         ],
         capacity: "4000",
         citiID: "city5",
-        userId: ""
+        userId: "admin1"
     },{
         id: "ho6",
         name: "Hotel Riu Plaza Berlin",
@@ -57,7 +57,7 @@ let dataHotels = [
         ],
         capacity: "1300",
         citiID: "city6",
-        userId: ""
+        userId: "admin1"
     },{
         id: "ho7",
         name: "Hotel Giraffe by Library Hotel Collection",
@@ -67,7 +67,7 @@ let dataHotels = [
         ],
         capacity: "4000",
         citiID: "city7",
-        userId: ""
+        userId: "admin1"
     },{
         id: "ho8",
         name: "K+K Hotel George Kensington",
@@ -77,7 +77,7 @@ let dataHotels = [
         ],
         capacity: "2039",
         citiID: "city8",
-        userId: ""
+        userId: "admin1"
     },{
         id: "ho9",
         name: "NH Collection München Bavaria",
@@ -87,7 +87,7 @@ let dataHotels = [
         ],
         capacity: "5000",
         citiID: "city9",
-        userId: ""
+        userId: "admin1"
     },{
         id: "ho10",
         name: "Alma Barcelona",
@@ -97,7 +97,7 @@ let dataHotels = [
         ],
         capacity: "7000",
         citiID: "city10",
-        userId: ""
+        userId: "admin1"
     },{
         id: "ho11",
         name: "Austria Trend Parkhotel Schönbrunn Wien",
@@ -107,7 +107,7 @@ let dataHotels = [
         ],
         capacity: "3000",
         citiID: "city11",
-        userId: ""
+        userId: "admin1"
     },{
         id: "ho12",
         name: "NH Collection Milano President",
@@ -117,7 +117,7 @@ let dataHotels = [
         ],
         capacity: "2500",
         citiID: "city12",
-        userId: ""
+        userId: "admin1"
     },
 ]
 
