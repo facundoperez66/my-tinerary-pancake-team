@@ -6,6 +6,8 @@ import Hotels from './pages/Hotels/Hotels';
 import Main from './layouts/Main/Main';
 import NotFound from './pages/NotFound/NotFound';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import { DetailCity } from './pages/DetailCity/DetailCity';
+
 function App() {
 
   return (
@@ -19,6 +21,7 @@ function App() {
 <Route path='/Cities' element={<Cities />} />
 <Route path='/Hotels' element={<Hotels />} />
 <Route path='/notfound' element={<NotFound />} />
+<Route path="/Cities/:id" element={<DetailCity />} />
 
 </Routes>
 
@@ -26,7 +29,7 @@ function App() {
     
 
 
-   {/*  <Main></Main> */}
+   {/*  <Route path='/DetailCity/:id' element={<DetailCity />} /> */}
     
     
     

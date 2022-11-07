@@ -1,0 +1,73 @@
+
+
+.DetailCityContainer{
+    width: 100%;
+    min-height: 100vh;
+    border: 4px solid red;
+    background-color: #3E78B2;
+   
+}
+
+
+
+.PartSuperior{
+    border: 4px solid blue;
+    width: 100%;
+    height: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.ContenidoSuperior{
+width: 80rem;
+height: 30rem;
+    border: 4px solid green;
+    display: flex;
+}
+
+.fotoDetails{
+    border: 4px solid red;
+    width: 45%;
+    height: 100%;
+}
+
+.TextoSuperior{
+    border: 4px solid orange;
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.MyTitulo{
+    border: 4px solid pink;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.ParteIntermedia{
+    border: 4px solid black;
+    width: 100%;
+    height: 40rem;
+    display: flex;
+}
+
+
+.ParteIzq{
+    border: 4px solid brown;
+    width: 55%;
+    height: 85%;
+}
+
+.ParteDer{
+    width: 45%;
+    height: 85%;
+    border: 4px solid green;
+}

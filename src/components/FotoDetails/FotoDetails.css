@@ -1,0 +1,16 @@
+.PhotoCards1 img{
+    height: 100%;
+    width: 100%;
+  
+    border-radius: 2rem;
+    
+}
+
+
+.PhotoCards1 {
+    height: 100%;
+    width: 100%;
+  
+    border-radius: 2rem;
+    border: 4px solid blue;
+}
