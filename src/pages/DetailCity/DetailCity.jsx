@@ -1,7 +1,5 @@
-
 import { useParams } from "react-router-dom"
 import './DetailCity.css'
-
 import { useState, useEffect } from "react"
 import { Detail } from "../../components/Neww/ComponenteNuevo"
 
@@ -17,10 +15,10 @@ export const DetailCity = () => {
             .then(res  => res.json())
             .then(data => setCity(data.cities.find(a => a.id === parseInt(id))))
             
-   },[city])
+        },[])
     
 
-
+console.log(city)
 
     return (
 <>
