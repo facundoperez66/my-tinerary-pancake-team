@@ -15,7 +15,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    min-height: 90vh;
     background-color: var(--main);
     
 }
@@ -79,4 +79,17 @@
     height: 550px;
     width: 300px;
     border-radius: 15px;
+    flex-wrap: wrap;
+}
+@media screen and (max-width:469px){
+    .card-sign{
+        margin-top: 350px;
+        width: 250px;
+        
+    }
+    .form-signin input{
+        width: 80%;
+      
+    }
+    
 }

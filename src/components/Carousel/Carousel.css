@@ -16,6 +16,7 @@
     min-height: 80vh;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     
   }
   .FlechaCarousel img{
@@ -28,14 +29,27 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    gap: 2rem;
+    
   }
   .CardConteinerC2{
     display: flex;
     width: 100%;
     gap: 2rem;
     margin-top: 1rem;
+    justify-content: center;
   }
   .ContaineCaouselGral{
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+  }
+@media screen and (max-width:838px){
+  .ContaineCaouselGral{
     flex-direction: column;
   }
+  .CardConteinerC1,.CardConteinerC2{
+    flex-direction: column;
+  }
+}

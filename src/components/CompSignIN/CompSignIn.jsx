@@ -1,5 +1,6 @@
 import React from 'react'
 import './CompSignIn.css'
+import GoogleButton from '../GoogleButton/GoogleButton'
 import ImgSignIn from '../ImgSignIn/ImgSignIn'
 import FormSignIn from '../FormSignIn/FormSignIn'
 import { useState } from 'react'
@@ -33,6 +34,7 @@ import { useState } from 'react'
             <div>
                 <h2>Welcome Back!</h2>
             </div>
+            
             </div>
             <div >
             <form  id = 'form'action="index" method='get' className='form-signin'>
@@ -45,7 +47,7 @@ import { useState } from 'react'
     <input type="submit" onClick={submit} value='Submit'/>
 
             <a href="signup"> Don't Have an Account? </a>
-        
+            <GoogleButton/>
         </form>
             </div>
         </div>
