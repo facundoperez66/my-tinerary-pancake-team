@@ -26,6 +26,7 @@
     width: 25rem;
     margin-top: 30px;
     border-radius: 2rem;
+    flex-wrap: wrap;
 }
 
 

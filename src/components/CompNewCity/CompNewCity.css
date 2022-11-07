@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    min-height: 90vh;
     background-color: var(--main);
 }
 
@@ -27,4 +27,10 @@
     background-color: var(--live);
     color: var(--lighter);
     border-radius: 10px;
+}
+@media screen and (max-width:570px){
+    .card-newcity{
+        margin-top: 350px;
+        width: 90%;
+    }
 }

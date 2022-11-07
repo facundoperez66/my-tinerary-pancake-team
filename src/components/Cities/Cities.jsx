@@ -37,6 +37,7 @@ let checkHandler = (e) => {
 
 <>
 <div className='CitiesMod'>
+  
     <div className='ContenedorDeFiltros' >
     <h2>CITIES</h2>
         <div  className='FiltrosDis'  >

@@ -3,7 +3,7 @@ import './Carousel.css'
 //import CardHotel from '../CardCarousel/CardHotel'
 import Flechas from '../Flechas/Flechas'
 import PhotoCarousel from '../PhotoCarousel/PhotoCarousel'
-import dataHotels from '../../datahotels'
+import dataHotels from '../../dataHotels'
 import DataCardHotel from '../DataCardHotel/DataCardHotel'
 import dataCities from '../../dataCities'
 export default function Carousel() {
@@ -37,6 +37,11 @@ let prev = () =>{
         
         <DataCardHotel name={dataCities[numeroACambiar].name}></DataCardHotel>
         </div>
+        <div className='CardHotelContainer'>
+        <PhotoCarousel image={dataHotels[numeroACambiar].photo[0]}></PhotoCarousel>
+        
+        <DataCardHotel name={dataHotels[numeroACambiar].name}></DataCardHotel>
+        </div>
       </div>
       <div className='CardConteinerC2'>
         
@@ -45,11 +50,7 @@ let prev = () =>{
         
         
         </div>
-        <div className='CardHotelContainer'>
-        <PhotoCarousel image={dataHotels[numeroACambiar].photo[0]}></PhotoCarousel>
         
-        <DataCardHotel name={dataHotels[numeroACambiar].name}></DataCardHotel>
-        </div>
         <div className='CardHotelContainer'>
         <PhotoCarousel image={dataHotels[numeroACambiar].photo[1]}></PhotoCarousel>
         

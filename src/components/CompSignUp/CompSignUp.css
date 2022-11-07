@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    min-height: 90vh;
     background-color: var(--main);
 }
 .card-signup{
@@ -33,4 +33,10 @@
   padding: 10px;
   background-color: var(--live);
   color: var(--lighter);
+}
+@media screen and (max-width:573px){
+  .card-signup{
+    margin-top: 350px;
+    width: 90%; 
+  }
 }

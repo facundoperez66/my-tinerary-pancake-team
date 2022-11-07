@@ -10,7 +10,7 @@
     background-color: #3E78B2;
   width: 40rem;
   display: flex;
-
+  
   
   
 }
@@ -55,4 +55,14 @@ font-size: larger ;
 .Searchbar-filtro2{
 height: 3rem;
 
+}
+@media screen and (max-width:704px){
+    .FiltrosDis{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+    }
+   
 }

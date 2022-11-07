@@ -2,7 +2,7 @@ import './Hotels.css'
 import Filtro1 from '../Filtro 1/Filtro1'
 import Filtro2 from '../Filtro 2/Filtro2'
 import CardHotel from '../CardHotel/CardHotel'
-import dataHotels from '../../datahotels'
+import dataHotels from '../../dataHotels'
 import { useState, useEffect, useCallback } from 'react';
 export default function ComponentesHotels() {
     const [query, setQuery] = useState('');
