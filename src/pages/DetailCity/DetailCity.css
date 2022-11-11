@@ -1,0 +1,29 @@
+.CONTENEDOR-PADRE{
+    width: 100%;
+    min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+.CONTENEDORINFERIOR3{
+    
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.CONTENEDORINFERIOR3 button{
+    height: 75px;
+    width: 150px;
+}
+
+.ComentariosBoton{
+    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

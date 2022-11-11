@@ -1,0 +1,42 @@
+:root {
+    --lighter: #FFFFFF;
+    --main: #3E78B2;
+    --expression: #004BA8;
+    --strong: #4A525A;
+    --live: #07070A;
+  }
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+.signup-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background-color: var(--main);
+}
+.card-signup{
+    background-color: var(--lighter);
+    border-radius: 10px;
+    width: 400px;
+    
+}
+.google-button img{
+    width: 20px;  
+}
+.google-button{
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+  padding: 10px;
+  background-color: var(--live);
+  color: var(--lighter);
+}
+@media screen and (max-width:573px){
+  .card-signup{
+    margin-top: 350px;
+    width: 90%; 
+  }
+}

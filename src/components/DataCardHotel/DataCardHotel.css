@@ -1,0 +1,29 @@
+:root {
+    --lighter: #FFFFFF;
+    --main: #3E78B2;
+    --expression: #004BA8;
+    --strong: #4A525A;
+    --live: #07070A;
+  }
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .DataCardHotel{
+    display: flex;
+    justify-content: center;
+    background-color: var(--main);
+    color: var(--lighter);
+    width: 350px;
+    height: 30px;
+    border-radius: 5px;
+  }
+  @media screen and (max-width:351px){
+    .DataCardHotel{
+      width: 250px;
+      justify-content: center;
+      display: flex;
+      
+    }
+  }

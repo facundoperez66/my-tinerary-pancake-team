@@ -1,0 +1,20 @@
+:root {
+    --lighter: #FFFFFF;
+    --main: #3E78B2;
+    --expression: #004BA8;
+    --strong: #4A525A;
+    --live: #07070A;
+  }
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .SocialNetContainer{
+    display: flex;
+    align-items: center;
+    
+  }
+  .SocialNet img{
+    width: 60px;
+  }

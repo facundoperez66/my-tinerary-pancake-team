@@ -1,0 +1,33 @@
+.card-City{
+    background-color: #004BA8;
+    height: 30rem;
+    width: 25rem;
+    margin-top: 30px;
+    border-radius: 2rem;
+}
+
+.UnderCard{
+    
+    height: 9rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.botonCard{
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    
+    
+}
+
+.botonCard button{
+    height: 50px;
+    width: 75px;
+    
+    
+}

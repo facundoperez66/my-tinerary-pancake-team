@@ -1,0 +1,55 @@
+:root {
+    --lighter: #FFFFFF;
+    --main: #3E78B2;
+    --expression: #004BA8;
+    --strong: #4A525A;
+    --live: #07070A;
+  }
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .Carousel{
+    display: flex;
+    width: 100%;
+    min-height: 80vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+  }
+  .FlechaCarousel img{
+    display: flex;
+    width: 30px;
+    justify-content: center;
+    margin: 10px;
+  }
+  .CardConteinerC1{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 2rem;
+    
+  }
+  .CardConteinerC2{
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+    margin-top: 1rem;
+    justify-content: center;
+  }
+  .ContaineCaouselGral{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+  }
+@media screen and (max-width:838px){
+  .ContaineCaouselGral{
+    flex-direction: column;
+  }
+  .CardConteinerC1,.CardConteinerC2{
+    flex-direction: column;
+  }
+}

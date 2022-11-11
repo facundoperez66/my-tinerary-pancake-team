@@ -1,0 +1,19 @@
+:root {
+    --lighter: #FFFFFF;
+    --main: #3E78B2;
+    --expression: #004BA8;
+    --strong: #4A525A;
+    --live: #07070A;
+  }
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Home2{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 80vh;
+}

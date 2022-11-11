@@ -1,0 +1,25 @@
+:root {
+    --lighter: #FFFFFF;
+    --main: #3E78B2;
+    --expression: #004BA8;
+    --strong: #4A525A;
+    --live: #07070A;
+  }
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .FooterContainer{
+    display: flex;
+    background-color: var(--expression);
+    justify-content:space-around;
+    min-height: 10vh;
+  }
+@media screen and (max-width:634px) {
+  .FooterContainer{
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
