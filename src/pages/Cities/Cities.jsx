@@ -7,14 +7,11 @@ export default function Cities() {
 
     let [ciudades, setCiudades] = useState([])
     let [ciudadesFiltradas, setCiudadesFiltradas] = useState([])
-    const America = useRef()
-    const Europa = useRef()
-    const Asia = useRef()
-    const Sudafrica = useRef()
-    const Australia = useRef()
+    
+    let [checks, setChecks] = useState([])
     const searchId = useRef()
 
-    const continentes = [America, Europa, Asia, Sudafrica, Australia]
+
 
     useEffect(() => {
         fetch('../dataCities.json')
@@ -28,9 +25,9 @@ export default function Cities() {
 
     let checkCiudades = [...new Set(ciudades.map((ciudad) => ciudad.continent))]
 
-    function filterCheckCards() {
+    function filterCheckCards(evento) {
 
-        let checkFiltered = filterCheck()
+        let checkFiltered = filterCheck(evento)
         localStorage.setItem('checkboxFiltrados', JSON.stringify(checkFiltered))
         let searchFiltered = filterSearch(checkFiltered)
         localStorage.setItem('searchFiltrados', JSON.stringify(searchFiltered))
@@ -39,14 +36,23 @@ export default function Cities() {
         localStorage.setItem('ciudadesFiltradas', JSON.stringify(searchFiltered))
     }
 
-    function filterCheck() {
-        let checks = []
-        continentes.filter((continente) => continente.current?.checked).map((continente) => checks.push(continente.current.value))
-        let ciudadesFiltradas = ciudades.filter((ciudad) => checks.includes(ciudad.continent))
+    function filterCheck(event) {
+        let checkFiltered = checks
+        if(event.target.checked) {
+            checkFiltered =  [...checks, event.target.name]
+        } else {
+            checkFiltered = checks.filter((check) => check !== event.target.name)
+            console.log(checks)
+        }
 
-        if (checks.length === 0) {
+        let ciudadesFiltradas = ciudades.filter((ciudad) => checkFiltered.includes(ciudad.continent))
+
+        setChecks(checkFiltered)
+
+        if (checkFiltered.length === 0) {
             return ciudades
         }
+
         return ciudadesFiltradas
     }
 
@@ -71,7 +77,7 @@ export default function Cities() {
                 </label>
 
                 {checkCiudades.map((continente, index) => {
-                    return <Checkbox continent={continente} valor={continente} refId={continentes[index]} fx={filterCheckCards} key={index} />
+                     return <Checkbox continent={continente} valor={continente} fx={filterCheckCards} key={index} />
                 })}
             </form>
 </div>
