@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css'
 import Profiles from '../perfiles/Profiles';
-import SideNavBar from '../Navbar/Navbar';
+import SideNavBar from '../navbar/Navbar';
 
 
 export default function Header(){
