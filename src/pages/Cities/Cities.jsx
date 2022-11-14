@@ -1,8 +1,9 @@
+import axios from 'axios'
 import React, { useRef, useState, useEffect } from 'react'
 import "./Cities.css"
 import Checkbox from '../../components/CheckBox/Checkbox'
 import CityCard from '../../components/CityCard/CityCard'
-import axios from 'axios'
+
 
 export default function Cities() {
 
@@ -22,7 +23,6 @@ export default function Cities() {
         axios.get(`http://localhost:8080/api/cities/`)
             .then(res => setCiudadesFiltradas(res.data.data))
             .catch(err => console.log(err))
-
         
     }, [])
 

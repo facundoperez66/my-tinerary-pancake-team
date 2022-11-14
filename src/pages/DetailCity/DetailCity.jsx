@@ -1,40 +1,43 @@
-import React from 'react'
-import "./DetailCity.css"
+import React from 'react';
+import "./DetailCity.css";
+import CardDetails from '../../components/CardDetails2/CardDetails2';
 import { useParams } from 'react-router';
 import { useState, useEffect } from 'react';
-import Events from "../../components/Itinerary/Itinerary"
+import Events from "../../components/Itinerary/Itinerary";
+import axios from "axios"
 
 export default function DetailsCity() {
 
     const { id } = useParams()
 
     const [detailCards, setDetailCards] = useState([])
-    const [tourism, setTourism] = useState([])
+    const [itinerary, setItinerary] = useState([])
 
-    let [mostrarEventoUno, setMostrarEventoUno] = useState(false)
-    let [mostrarEventoDos, setMostrarEventoDos] = useState(false)
+
+
+    
+
 
     useEffect(() => {
-        fetch('../dataCities.json')
-            .then(response => response.json())
-            .then(response => setDetailCards(response))
+      axios.get(`http://localhost:8080/api/cities/${id}`)
+      .then(res => setDetailCards(res.data.data))
 
-        fetch('../dataEvents.json')
-            .then(response => response.json())
-            .then(response => setTourism(response))
+      console.log(detailCards)
+
+
+      axios.get(`http://localhost:8080/api/itineraries?cityId=${id}`)
+      .then(res => setItinerary(res.data.data))
     }, [])
 
-    function numeroRandom(numero) {
-        return Math.floor(Math.random() * numero)
-    }
+    
 
-    let ciudadFilt = detailCards.filter((ciudad) => ciudad.id === id)[0]
+    
 
     
 
     
 
-    if (ciudadFilt) {
+    if (detailCards) {
         return (
             <div className='CONTENEDOR-PADRE'>
               <div className='contenedor-details'>
@@ -42,7 +45,8 @@ export default function DetailsCity() {
               </div>
                 <div className="detail-cities">
                     <div className="img-detail">
-                        <img className="" src={ciudadFilt.photo} alt={ciudadFilt.name} />
+                      
+                        <img className="" src={detailCards.photo} alt= {detailCards.name} />
                     </div>
                     <div className="text-detail">
                         <div className="logo-details">
@@ -50,13 +54,13 @@ export default function DetailsCity() {
                         </div>
                         <div>
                           <div>
-                            <h1>{ciudadFilt.name}</h1>
+                            <h1>CITY: {detailCards.name}</h1>
 </div>
 <div>
-                            <p>{ciudadFilt.continent}</p>
+                            <p>CONTINENT: {detailCards.continent}</p>
 </div>
 <div>
-                            <p>{ciudadFilt.population}</p>
+                            <p>POPULATION: {detailCards.population}</p>
 </div>
                         </div>
                         
@@ -69,8 +73,11 @@ export default function DetailsCity() {
                   <h2>EVENTS</h2>
                 </div>
                 <div className='cajadeEeventos'>
-                <Events className="p-2" id={ciudadFilt.id}></Events>
-                  
+
+                {
+            (itinerary.length!=0)?itinerary.map(e=><CardDetails key={e?._id} name={e?.name} photo={e?.photo[0]} description={e?.description} price={e?.price} duration={e?.duration} />):console.log(true)
+        }
+          
                 </div>
 
                 <div className='botoncito12321'>

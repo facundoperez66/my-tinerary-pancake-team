@@ -18,7 +18,7 @@ export default function CityCard(props) {
                 <p>Population: {city.population}</p>
             </div>
             <div className='botoncito12321'>
-            <NavLink to={`/detailsC/${city.id}`} style={{ textDecoration: 'none' }}>
+            <NavLink to={`/detailsC/${city._id}`} style={{ textDecoration: 'none' }}>
                 <button className="more">More...</button>
             </NavLink>
 </div>
