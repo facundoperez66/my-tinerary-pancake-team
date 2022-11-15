@@ -7,6 +7,12 @@
     padding: 15px;
 }
 
+.cards22 img{
+    border-radius: 2rem;
+    height: 40rem;
+    width: 40rem;
+}
+
 .ContenidoDetalles2{
     
     display: flex;
