@@ -9,9 +9,9 @@ import SignIn from './pages/SignIn/SignIn';
 import SignUp from './pages/SignUp/SignUp';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import {NewCity } from './pages/NewCity/Newcity';
-import NewHotel from './pages/NewHotel/NewHotel';
+import {NewHotel} from './pages/NewHotel/NewHotel';
 import  DetailsCity  from './pages/DetailCity/DetailCity';
-import { DetailHotel } from './pages/DetailHotel/DetailHotel'
+import DetailHotel from './pages/DetailHotel/DetailHotel';
 
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
 <Route path='/NewCity' element={<NewCity/>}/>
 <Route path='/NewHotel' element={<NewHotel/>}/>
 <Route path="/detailsC/:id" element={<DetailsCity />} />
-<Route path="/Hotels/:id" element={<DetailHotel />} />
+<Route path="/detailsH/:id" element={<DetailHotel />} />
 
 </Routes>
 

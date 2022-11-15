@@ -1,33 +1,33 @@
+import React from 'react';
 import './DetailHotel.css'
-import { HotelDetail2 } from "../../components/HotelDetail2/HotelDetail2";
-import { useState, useEffect } from "react";
+import CardHotelFinal from '../../components/CardHotelFinal/CardHotelFinal';
+
 import { useParams } from "react-router-dom";
-import ShowsDetails from "../../components/ShowsDetails/ShowsDetails";
-import CardShow from "../../components/CardShow/CardShow";
+import { useState, useEffect } from "react";
+
 import axios from 'axios';
 
-export const DetailHotel = () => {
+export default function DetailHotel () {
 
     
     
 
-    let { id } = useParams();
+    const { id } = useParams()
     const [detailCards, setDetailCards] = useState([])
     const [show, setShow] = useState([])
-
+    
 
     useEffect(() => {
-      axios.get(`http://localhost:8080/api/hotel/`)
+      axios.get(`http://localhost:8080/api/hotels/${id}`)
       .then(res => setDetailCards(res.data.data))
 
       console.log(detailCards);
 
-      axios.get(`http: //localhost:8080/api/shows?hotelId=${id}`)
-      .then(res => setShow(res.data.data))
-      // eslint-disable-next-line
+      axios.get(`http://localhost:8080/api/shows?hotelId=${id}`)
+      .then(res => setShow(res.data.response))
     }, []);
 
-    console.log(id);
+   
 
   
 
@@ -59,24 +59,24 @@ export const DetailHotel = () => {
 
                 </div>
             </div>
-
-
+            
             <div className='parteInferior'>
-              <h2>EVENTS</h2>
-            </div>
-            <div className='cajadeEeventos'>
+                  <h2>EVENTS</h2>
+                </div>
+                <div className='cajadeEeventos'>
 
-            {
-       
-    }
+          {
+       (show.length!=0)?show.map(e=> <CardHotelFinal key={e?._id} name={e?.name} photo={e?.photo} description={e?.description} price={e?.price} date={e?.date} />):console.log(true)
+          }
 
             </div>
 
-            <div className='botoncito12321'>
-              <button>
-                <p>Coment</p>
-              </button>
-            </div>
+        <div className='botoncito12321'>
+  <button>
+    <p>Coment</p>
+  </button>
+</div>
+            
         </div>
 
 
