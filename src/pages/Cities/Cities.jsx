@@ -57,19 +57,19 @@ export default function Cities() {
     return (
         <div className="cities-container">
             <div className='TituloHeader3'>
-            <h2>Cities </h2>
+                <h2 className='cities-title'>Cities </h2>
             
-            <form className="category-container" method="get">
+                <form className="category-container" method="get">
                 
-                <label className='prueba12321'>
-                    <input className="search-input w-100" type="search" name="search" id="search" placeholder="Search" ref={searchId} onChange={filterCheckCards} />
-                </label>
+                    <label className='prueba12321'>
+                        <input className="search-input w-100" type="search" name="search" id="search" placeholder="Search" ref={searchId} onChange={filterCheckCards} />
+                    </label>
 
-                {checkCiudades.map((continente, index) => {
-                     return <Checkbox continent={continente} valor={continente} fx={filterCheckCards} key={index} />
+                    {checkCiudades.map((continente, index) => {
+                        return <Checkbox continent={continente} valor={continente} fx={filterCheckCards} key={index} />
                 })}
-            </form>
-</div>
+                </form>
+            </div>
             <div className="cards-container">
 
                 {ciudadesFiltradas.length > 0 ? (

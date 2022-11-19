@@ -60,9 +60,12 @@
     align-items: center;
     height: 30rem;
     flex-direction: column;
+    background-color: var(--main);
+    color: var(--lighter);
     
 }
 .TituloHeader3 h2{
     padding-bottom: 10rem;
     font-size: 2cm;
+    
 }
