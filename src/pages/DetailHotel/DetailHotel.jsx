@@ -40,7 +40,7 @@ export default function DetailHotel () {
             <div className="detail-cities">
                 <div className="img-detail">
 
-                    <img className="" src={detailCards.photo} alt= {detailCards.name} />
+                    <img className="" src={detailCards.photo[0]} alt= {detailCards.name} />
                 </div>
                 <div className="text-detail">
                     <div className="logo-details">
