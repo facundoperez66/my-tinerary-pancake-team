@@ -1,50 +1,86 @@
+import React from 'react';
 import './DetailHotel.css'
-import { HotelDetail2 } from "../../components/HotelDetail2/HotelDetail2";
-import { useState, useEffect } from "react";
+import CardHotelFinal from '../../components/CardHotelFinal/CardHotelFinal';
+
 import { useParams } from "react-router-dom";
-import ShowsDetails from "../../components/ShowsDetails/ShowsDetails";
-import CardShow from "../../components/CardShow/CardShow";
+import { useState, useEffect } from "react";
 
-export const DetailHotel = () => {
+import axios from 'axios';
 
-    let [hotel, setHotel] = useState([])
+export default function DetailHotel () {
+
+    
     
 
-    let { id } = useParams();
-  
-
+    const { id } = useParams()
+    const [detailCards, setDetailCards] = useState([])
+    const [show, setShow] = useState([])
+    
 
     useEffect(() => {
-      fetch("/dataHotel.json")
-        .then((res) => res.json())
-        .then((res) => setHotel(res.find((e) => e.id === id)));
-  
-  
-      // eslint-disable-next-line
+      axios.get(`http://localhost:8080/api/hotels/${id}`)
+      .then(res => setDetailCards(res.data.data))
+
+      console.log(detailCards);
+
+      axios.get(`http://localhost:8080/api/shows?hotelId=${id}`)
+      .then(res => setShow(res.data.response))
     }, []);
 
-    console.log(id);
+   
+
+  
+
+  if (detailCards) {
     return (
-        <>
+        <div className='CONTENEDOR-PADRE'>
+          <div className='contenedor-details'>
+            <h2>DETAILS</h2>
+          </div>
+            <div className="detail-cities">
+                <div className="img-detail">
+
+                    <img className="" src={detailCards.photo[0]} alt= {detailCards.name} />
+                </div>
+                <div className="text-detail">
+                    <div className="logo-details">
+                        <img className="img-w-5" src="./img/building1.png" alt="" />
+                    </div>
+                    <div>
+                      <div>
+                        <h1>HOTEL: {detailCards.name}</h1>
+</div>
+<div>
+                        <p>CAPACITY: {detailCards.capacity}</p>
+</div>
+
+                    </div>
 
 
-<div className="CONTENEDOR-PADRE">
-<HotelDetail2 name={hotel.name} photo={hotel.photo} capacity={hotel.capacity} />
+                </div>
+            </div>
+            
+            <div className='parteInferior'>
+                  <h2>EVENTS</h2>
+                </div>
+                <div className='cajadeEeventos'>
+
+          {
+       (show.length!=0)?show.map(e=> <CardHotelFinal key={e?._id} name={e?.name} photo={e?.photo} description={e?.description} price={e?.price} date={e?.date} />):console.log(true)
+          }
+
+            </div>
+
+        <div className='botoncito12321'>
+  <button>
+    <p>Coment</p>
+  </button>
+</div>
+            
         </div>
-        <div className="CONTENEDORINFERIOR34">
-      <ShowsDetails className="NOSEEEE" id={hotel.id} ></ShowsDetails>
-      <div className="ComentariosBoton">
-     <button>View Comments</button>
-     </div>
-      </div>
-
-</>
-
-
-
-
-
 
 
     )
+}
+
 }

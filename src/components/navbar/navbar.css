@@ -3,11 +3,12 @@
 	--dark: #004BA8;
 	--gray: #756388;
 	--light: #ffffff;
+	--black: rgb(2, 2, 2);
 }
 
 .side-nav-container {
     
-	background-color: var(--dark);
+	background-color: var(--black);
 	width: 14rem;
 	height: 21rem;
 	position: absolute;
