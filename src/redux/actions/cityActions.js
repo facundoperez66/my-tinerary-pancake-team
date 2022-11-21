@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { act } from "react-dom/test-utils";
+
 import { BASE_URL } from '../../api/url'
 
 const getCities = createAsyncThunk("getCities", async (data) => {
@@ -32,10 +32,39 @@ const citiesFiltred = createAsyncThunk("citiesFiltred", async (data) => {
         }
     }
 })
+const createCity = createAsyncThunk("createCity", async (newCity) => {
+    try{
+        const res = await axios.post(`${BASE_URL}/api/cities`, newCity)
+
+        if (res.data.id) {
+            return {
+                id: res.data.id,
+                success: true,
+                response: newCity,
+            }
+        } else {
+            return {
+                success: false,
+                messages: res.data.message,
+
+            }
+        }
+    }catch(error){
+        return {
+            success: false,
+            response: 'Ocurrio un error'
+        }
+    }
+})
+
+ 
+
+
 
 const actionsCity = {
     getCities,
-    citiesFiltred
+    citiesFiltred,
+    createCity
 }
 
 export default actionsCity

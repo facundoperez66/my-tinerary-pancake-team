@@ -1,4 +1,4 @@
-import axios from 'axios'
+
 import React, { useRef, useState, useEffect } from 'react'
 import "./Cities.css"
 import Checkbox from '../../components/CheckBox/Checkbox'
@@ -12,7 +12,8 @@ export default function Cities() {
     const dispatch = useDispatch()
     const { cities, checks, name, checked, continent } = useSelector(state => state.city)
     const { getCities, citiesFiltred } = actionsCity
-    
+
+
     let [checkbox, setChecks] = useState([])
     const searchId = useRef()
     const inputCheck = useRef()
@@ -98,7 +99,7 @@ export default function Cities() {
                         return <CityCard city={city} key={index} />
                     }))
                     : (
-                        <img className='img-fluid' width='100%' src="./img/notsearch.png" alt="Not Found Search" />
+                        <img className='img-fluid' width='100%' src="../img/notsearch.png" alt="Not Found Search" />
                     )}
             </div>
         </div>
