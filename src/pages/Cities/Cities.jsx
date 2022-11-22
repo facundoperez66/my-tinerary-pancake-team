@@ -1,49 +1,71 @@
-import axios from 'axios'
+
 import React, { useRef, useState, useEffect } from 'react'
 import "./Cities.css"
 import Checkbox from '../../components/CheckBox/Checkbox'
 import CityCard from '../../components/CityCard/CityCard'
+import	{ useDispatch, useSelector } from 'react-redux'
+import actionsCity from '../../redux/actions/cityActions'
 
 
 export default function Cities() {
 
-    let [ciudades, setCiudades] = useState([])
-    let [ciudadesFiltradas, setCiudadesFiltradas] = useState([])
-    
-    let [checks, setChecks] = useState([])
-    const searchId = useRef()
+    const dispatch = useDispatch()
+    const { cities, checks, name, checked, continent } = useSelector(state => state.city)
+    const { getCities, citiesFiltred } = actionsCity
 
+
+    let [checkbox, setChecks] = useState([])
+    const searchId = useRef()
+    const inputCheck = useRef()
 
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/api/cities/`)
-            .then(res => setCiudades(res.data.data))
-            .catch(err => console.log(err))
-
-        axios.get(`http://localhost:8080/api/cities/`)
-            .then(res => setCiudadesFiltradas(res.data.data))
-            .catch(err => console.log(err))
+        if (checks || name) {
+            let info = {
+                checks, name, checked
+            }
+            dispatch(citiesFiltred(info))
+            searchId.current.value = name
+            if (checked) {
+                checked.forEach(check => {
+                    let input = Array.from(inputCheck.current).find(input => input.value === check)
+                    input.checked = true
+                })
+            }
+        } else {
+            dispatch(getCities)
+        }
+        
         
     }, [])
 
 
-    let checkCiudades = [...new Set(ciudades.map((ciudad) => ciudad.continent))]
-
     function filterCheckCards(evento) {
 
-        let checkFiltered = filterCheck(evento)
-        let urlChecks = checkFiltered.map((check) => `continent=${check}`).join('&')
+      let filter = filterCheck(evento)
 
-        axios.get(`http://localhost:8080/api/cities?${urlChecks}&name=${searchId.current.value}`)
-            .then(res => setCiudadesFiltradas(res.data.data))
+        let checked = filter
+
+        filter = filter.map((check) => 'continent=${check}').join('&')
+    
+
+    let data = {
+        name: searchId.current.value,
+        checks: filter,
+        checked: checked
     }
 
-    function filterCheck(event) {
+    dispatch(citiesFiltred(data))
+
+}
+
+    function filterCheck(evento) {
         let checkFiltered = []
-        if(event.target.checked) {
-            checkFiltered =  [...checks, event.target.name]
+       if(evento.target.checked) {
+        checkFiltered = [...checked, evento.target.name]
+       
         } else {
-            checkFiltered = checks.filter((check) => check !== event.target.name)
+            checkFiltered = checkbox.filter((check) => check !== evento.target.name)
             
         }
 
@@ -65,19 +87,19 @@ export default function Cities() {
                         <input className="search-input w-100" type="search" name="search" id="search" placeholder="Search" ref={searchId} onChange={filterCheckCards} />
                     </label>
 
-                    {checkCiudades.map((continente, index) => {
+                    {continent.map((continente, index) => {
                         return <Checkbox continent={continente} valor={continente} fx={filterCheckCards} key={index} />
                 })}
                 </form>
             </div>
             <div className="cards-container">
 
-                {ciudadesFiltradas.length > 0 ? (
-                    ciudadesFiltradas.map((city, index) => {
+            {cities.length > 0 ? (
+                    cities.map((city, index) => {
                         return <CityCard city={city} key={index} />
                     }))
                     : (
-                        <img className='img-fluid' width='100%' src="./img/notsearch.png" alt="Not Found Search" />
+                        <img className='img-fluid' width='10%' src="https://cdn-icons-png.flaticon.com/512/4952/4952559.png" alt="Not Found Search" />
                     )}
             </div>
         </div>

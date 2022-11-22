@@ -3,9 +3,9 @@ import './Carousel.css'
 //import CardHotel from '../CardCarousel/CardHotel'
 import Flechas from '../Flechas/Flechas'
 import PhotoCarousel from '../PhotoCarousel/PhotoCarousel'
-import dataHotels from '../../dataHotels'
+import dataHotels from '../../datahotels'
 import DataCardHotel from '../DataCardHotel/DataCardHotel'
-import dataCities from '../../dataCities'
+import dataCities from '../../datacities'
 import { useEffect } from 'react'
 export default function Carousel() {
 let [numeroACambiar,setNumeroACambiar]= useState(0)

@@ -1,78 +1,120 @@
 import './Newcity.css'
-import React, { useState } from 'react';
-import axios from 'axios';
-import {BASE_URL} from '../../api/url' 
-function NewCity() {
-    const [name, setName] = useState('');
-    const [continent,  setContinent] = useState('')
-    const [photo, setPhoto] = useState('');
-    const [population, setPopulation] = useState('');
-    const [userId, setUserId] = useState('');
-    const submit = () => {
-        if (name === "" || continent === "" || photo === "" || population === "" || userId === "") {
-            alert("Please fill in all fields");
-        } else {
-            let newCity = { name,continent,photo,population,userId}
-            axios.post(`${BASE_URL}/api/cities`,newCity)
-            .then(res => {
-                console.log(res);
-            })
-            localStorage.setItem("newCity", JSON.stringify(newCity)); 
+import React, {  useRef } from 'react';
+import BotonEnviar from '../../components/BotonEnviar/BotonEnviar';
+import { useDispatch } from "react-redux"
+import Inputs from '../../components/inputs/Inputs';
+import actionsCity from '../../redux/actions/cityActions';
+import Swal from 'sweetalert2';
+
+export default function NewCity() {
+
+    const dispatch = useDispatch()
+    const { createCity} = actionsCity
+
+    const form = useRef()
+    const name = useRef()
+    const continent = useRef()
+    const photo = useRef()
+    const population = useRef()
+
+    async function enviarFormulario(event) {
+        let newCity;
+        event.preventDefault()
+
+        newCity ={
+            name: name.current.value,
+            continent: continent.current.value,
+            photo: photo.current.value,
+            population: population.current.value,
+            userId: '636fe5cd55d86e11bfaebc4a',
+
         }
-    };
+
+        
+  
+        try {
+            let res = await dispatch(createCity(newCity))
+            console.log(res.payload)
+            if (res.payload.success) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'City created successfully.',
+                    showConfirmButton: true,
+                })
+                .then(result => {
+                    if(result.isConfirmed){
+                        window.location.href = `/detailsC/${res.payload.id}`
+                    }
+                })  
+                form.current.reset()    
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    html: res.payload.messages.join(' <br> '),
+                })
+            }
+        } catch (error) {
+            console.log(error)
+
+    }
+
+}
+    
+
     return (
-        <>
+        <main>
         <div className='CONTENEDORPADRE2'>
           <div className='ParteSuperiorNew'>
                     <h2> New City</h2>
                   </div>
-            <form className="form-newCity">
+            <form ref={form} className="form-newCity">
                 <div className="form-body">
                   
                     
                     <h2 className='title2'>Create new City!</h2>
-                    <input
+                    <h4>City name</h4>
+                    <Inputs
                         type="text"
                         placeholder="Name of city"
                         className='form__input'
-                        onChange={(e) => setName(e.target.value)}
-                        required
+                        id="name"
+                        refId={name}
+                        
                     />
-                    <input
+            <h4>Continent</h4>
+                    <Inputs 
                         type="text"
                         placeholder="Continent"
                         className='form__input'
-                        onChange={(e) => setContinent(e.target.value)}
-                        required
+                        id="continent"
+                        refId={continent}
                     />
-                    <input
+                    <h4>Photo</h4>
+                    <Inputs
                         type="text"
                         placeholder="Photo (URL)"
                         className='form__input'
-                        onChange={(e) => setPhoto(e.target.value)}
-                        required
+                        id="photo"
+                        refId={photo}
                     />
-                    <input
+                    <h4>Population</h4>
+                    <Inputs
                         type="text"
                         placeholder="Population"
                         className='form__input'
-                        onChange={(e) => setPopulation(Number(e.target.value))}
-                        required
+                        id="population"
+                        refId={population}
                     />
-                    <input
-                        type="text"
-                        placeholder="Admin"
-                        className='form__input'
-                        onChange={(e) => setUserId(e.target.value)}
-                        required
-                    />
+                    
                     <div className="submit12">
-                        <button className='submit2' onClick={submit}>Create</button>
+
+                        <BotonEnviar fx={enviarFormulario} texto='Create City' />
+                        
                     </div>
                 </div>
             </form>
             </div>
-        </>
+            </main>
     );
 };
-export { NewCity }
