@@ -94,8 +94,45 @@ const updateCity = createAsyncThunk("updateCity", async (data) => {
           payload: 'Error'
       }
   }
+
+
+  
+})
+const getItineraries = createAsyncThunk("getItineraries", async (id) => {
+    try{
+        const res = await axios.get(`${BASE_URL}/api/itineraries?userId=${id}`)
+        return res.data.data
+    }catch(error){
+        console.log(error)
+        return {
+            payload: 'Error'
+        }
+    }
 })
 
+const updateItinerary = createAsyncThunk("updateItinerary", async (data) => {
+    try{
+        const res = await axios.put(`${BASE_URL}/api/itineraries/${data.id}`, data.itinerary)
+        return res.data
+    }catch(error){
+        console.log(error)
+        return {
+            payload: 'Error'
+        }
+    }
+})
+
+const deleteItinerary = createAsyncThunk("deleteItinerary", async (id) => {
+    try{
+        const res = await axios.delete(`${BASE_URL}/api/itineraries/${id}`)
+        return res.data
+    }catch(error){
+        console.log(error)
+        return {
+            payload: 'Error'
+        }
+    }
+})
 
 
 
@@ -111,7 +148,11 @@ const actionsCity = {
     createCity,
     getCitiesAdmin,
     deleteCity,
-    updateCity
+    updateCity,
+    getItineraries,
+    updateItinerary,
+    deleteItinerary
+
     
     
 }
