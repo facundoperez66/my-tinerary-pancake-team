@@ -82,7 +82,7 @@ export default function DetailsCity() {
 
                 <div className='botoncito12321'>
                   <button>
-                    <p>Coment</p>
+                    <p>Comment</p>
                   </button>
                 </div>
             </div>
