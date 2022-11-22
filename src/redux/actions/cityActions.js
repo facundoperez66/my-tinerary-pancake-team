@@ -3,7 +3,7 @@ import axios from "axios";
 
 import { BASE_URL } from '../../api/url'
 
-const getCities = createAsyncThunk("getCities", async (data) => {
+const getCities = createAsyncThunk("getCities", async () => {
     try{
         const res = await axios.get(`${BASE_URL}/api/cities`)
         return res.data.data
@@ -32,6 +32,9 @@ const citiesFiltred = createAsyncThunk("citiesFiltred", async (data) => {
         }
     }
 })
+
+
+
 const createCity = createAsyncThunk("createCity", async (newCity) => {
     try{
         const res = await axios.post(`${BASE_URL}/api/cities`, newCity)
@@ -57,14 +60,60 @@ const createCity = createAsyncThunk("createCity", async (newCity) => {
     }
 })
 
- 
+const getCitiesAdmin = createAsyncThunk("getCitiesAdmin", async (id) => {
+  try{
+      const res = await axios.get(`${BASE_URL}/api/cities?userId=${id}`)
+      return res.data.data
+  }catch(error){
+      console.log(error)
+      return {
+          payload: 'Error'
+      }
+  }
+})
+
+const deleteCity = createAsyncThunk("deleteCity", async (id) => {
+  try{
+      const res = await axios.delete(`${BASE_URL}/api/cities/${id}`)
+      return res.data
+  }catch(error){
+      console.log(error)
+      return {
+          payload: 'Error'
+      }
+  }
+})
+
+const updateCity = createAsyncThunk("updateCity", async (data) => {
+  try{
+      const res = await axios.put(`${BASE_URL}/api/cities/${data.id}`, data.citie)
+      return res.data
+  }catch(error){
+      console.log(error)
+      return {
+          payload: 'Error'
+      }
+  }
+})
+
+
+
+
+
+  
+
 
 
 
 const actionsCity = {
     getCities,
     citiesFiltred,
-    createCity
+    createCity,
+    getCitiesAdmin,
+    deleteCity,
+    updateCity
+    
+    
 }
 
 export default actionsCity
