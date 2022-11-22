@@ -99,7 +99,7 @@ export default function Cities() {
                         return <CityCard city={city} key={index} />
                     }))
                     : (
-                        <img className='img-fluid' width='100%' src="../img/notsearch.png" alt="Not Found Search" />
+                        <img className='img-fluid' width='10%' src="https://cdn-icons-png.flaticon.com/512/4952/4952559.png" alt="Not Found Search" />
                     )}
             </div>
         </div>
