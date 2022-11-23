@@ -53,10 +53,93 @@ const createHotel = createAsyncThunk("createHotel", async (newHotel) => {
     }catch(error){
         return {
             success: false,
-            response: 'Ocurrio un error'
+            response: 'Something went wrong'
+        }
+    }
+    
+})
+const getHotelsAdmin = createAsyncThunk("getHotelsAdmin", async (id) => {
+    try{
+        const res = await axios.get(`${BASE_URL}/api/hotels?userId=${id}`)
+        return res.data.response
+    }catch(error){
+        console.log(error)
+        return {
+            payload: 'Error'
         }
     }
 })
-const hotelActions={hotelsFiltred,getHotels, createHotel}
+
+const deleteHotel = createAsyncThunk("deleteHotel", async (id) => {
+    try{
+        const res = await axios.delete(`${BASE_URL}/api/hotels/${id}`)
+        return res.data
+    }catch(error){
+        console.log(error)
+        return {
+            payload: 'Error'
+        }
+    }
+})
+
+const updateHotel = createAsyncThunk("updateHotel", async (data) => {
+    try{
+        const res = await axios.patch(`${BASE_URL}/api/hotels/${data.id}`, data.hotels)
+        console.log(res.data)
+        return res.data
+    }catch(error){
+        console.log(error)
+        return {
+            payload: 'Error'
+        }
+    }
+})
+const getShow = createAsyncThunk("getShow", async (id) => {
+    try{
+        const res = await axios.get(`${BASE_URL}/api/shows?userId=${id}`)
+        return res.data.data
+    }catch(error){
+        console.log(error)
+        return {
+            payload: 'Error'
+        }
+    }
+})
+
+const updateShow = createAsyncThunk("updateShow", async (data) => {
+    try{
+        const res = await axios.patch(`${BASE_URL}/api/shows/${data.id}`, data.show)
+        return res.data
+    }catch(error){
+        console.log(error)
+        return {
+            payload: 'Error'
+        }
+    }
+})
+
+const deleteShow = createAsyncThunk("deleteShow", async (id) => {
+    try{
+        const res = await axios.delete(`${BASE_URL}/api/shows/${id}`)
+        return res.data
+    }catch(error){
+        console.log(error)
+        return {
+            payload: 'Error'
+        }
+    }
+})
+
+const hotelActions={
+    hotelsFiltred, 
+    getHotels, 
+    createHotel, 
+    getHotelsAdmin, 
+    updateHotel, 
+    deleteHotel,
+    getShow,
+    updateShow,
+    deleteShow,
+}
 
 export default hotelActions

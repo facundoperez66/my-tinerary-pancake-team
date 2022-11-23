@@ -8,7 +8,7 @@ import Inputs from '../../components/inputs/Inputs';
 import BotonEnviar from '../../components/BotonEnviar/BotonEnviar';
 
 function NewHotel() {
-
+    
     const dispatch = useDispatch()
     const {cities} = useSelector(state => state.city)
     const {createHotel} = hotelActions
@@ -41,7 +41,7 @@ function NewHotel() {
             if(res.payload.success){
                 Swal.fire({
                     icon:'success',
-                    tittle: 'hotel created successfully',
+                    title: 'hotel created successfully',
                     showConfirmButton: true,
                 })
                 .then(result => {
@@ -53,8 +53,8 @@ function NewHotel() {
             }else{
                 Swal.fire({
                     icon:'error',
-                    tittle: 'error',
-                    html: res.payload.messages.join('<Br>')
+                    title: 'error',
+                    
                 })
             }
         }catch(error){
@@ -74,6 +74,7 @@ function NewHotel() {
                   
                     
                     <h2 className='title2'>Create new Hotel!</h2>
+                    <h4>Name of Hotel</h4>
                     <Inputs
                         refId= {name}
                         type="text"
@@ -82,6 +83,7 @@ function NewHotel() {
                         
                        
                     />
+                    <h4>Capacity</h4>
                     <Inputs
                         refId= {capacity}
                         type="text"
@@ -90,6 +92,7 @@ function NewHotel() {
                        
                         
                     />
+                    <h4>Photo 1</h4>
                     <Inputs
                         refId= {photo1}
                         type="text"
@@ -97,6 +100,7 @@ function NewHotel() {
                         className='form__input'
                         
                     />
+                    <h4>Photo 2</h4>
                     <Inputs
                         refId= {photo2}
                         type="text"
@@ -104,6 +108,7 @@ function NewHotel() {
                         className='form__input'
                         
                     />
+                    <h4>Photo 3</h4>
                     <Inputs
                         refId= {photo3}
                         type="text"
@@ -111,7 +116,13 @@ function NewHotel() {
                         className='form__input'
                         
                     />
-                   
+                    <label for="cityId">
+                        Select a City: 
+                    </label>
+                    <select id="cityId" ref={cityId}>
+                    {cities.map(city => <option key={city._id} value={city._id}>{city.name}</option>)} 
+                    </select>                   
+
                     <div className="submit12">
                         <BotonEnviar fx={sendForm} className='submit2' >Create</BotonEnviar>
                     </div>
