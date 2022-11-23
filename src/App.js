@@ -14,6 +14,8 @@ import  DetailsCity  from './pages/DetailCity/DetailCity';
 import DetailHotel from './pages/DetailHotel/DetailHotel';
 import MyCities from './pages/Mycities/MyCities';
 import MyItineraries from './pages/MyTineraries/MyTineraries';
+import MyHotels from './pages/Myhotels/MyHotels';
+import MyShows from './pages/MyShows/MyShows';
 
 function App() {
 
@@ -37,6 +39,8 @@ function App() {
 <Route path="/detailsH/:id" element={<DetailHotel />} />
 <Route path='/Mycities' element={<MyCities />} />
 <Route path='/MyTineraries' element={<MyItineraries />} />
+<Route path='/MyHotels' element={<MyHotels />} />
+<Route path='/MyShows' element={<MyShows />} />
 </Routes>
 
    </Main>
