@@ -1,10 +1,9 @@
 import cityReducer from "./cityReducer";
-import itineraryReducer from "./itineraryReducer";
-
+import hotelReduce from "./hotelReducer";
 
 const rootReducer = {
     city: cityReducer,
-    itinerary: itineraryReducer,
+    hotel: hotelReduce,
     
 }
 

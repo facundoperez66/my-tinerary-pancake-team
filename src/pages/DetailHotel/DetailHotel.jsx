@@ -63,19 +63,7 @@ export default function DetailHotel () {
             <div className='parteInferior'>
                   <h2>EVENTS</h2>
                 </div>
-                <div className='cajadeEeventos'>
-
-          {
-       (show.length!=0)?show.map(e=> <CardHotelFinal key={e?._id} name={e?.name} photo={e?.photo} description={e?.description} price={e?.price} date={e?.date} />):console.log(true)
-          }
-
-            </div>
-
-        <div className='botoncito12321'>
-  <button>
-    <p>Coment</p>
-  </button>
-</div>
+                
             
         </div>
 

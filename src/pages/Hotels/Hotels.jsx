@@ -1,22 +1,28 @@
-import axios from 'axios'
+
 import React, { useRef, useState, useEffect } from 'react'
 import HotelCard from '../../components/HotelCard/HotelCard'
-
+import hotelActions from '../../redux/actions/hotelActions'
+import { useDispatch, useSelector } from 'react-redux'
 
 
 export default function Hotels() {
 
-    let [hotelesFiltradas, setHotelesFiltradas] = useState([])
+    const dispatch = useDispatch()
+    const {hotels,name,order}=useSelector(state=>state.hotel)
+    const {getHotels,hotelsFiltred}= hotelActions
     const searchId = useRef()
     const selectId = useRef()
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/api/hotels`)
-            .then(res => setHotelesFiltradas(res.data.response))
-            .catch(err => console.log(err))
-
-
-
+       if(name||order){
+        let info = {name,order}
+       
+       dispatch(hotelsFiltred(info))
+       searchId.current.value= name
+       searchId.current.value= order
+        }else{
+            dispatch(getHotels())
+        }
     }, [])
 
     function filterCheckCards(){
@@ -25,25 +31,13 @@ export default function Hotels() {
         if (order !== 'asc' && order !== 'desc') {
             order = 'asc'
         }
-        let search = searchId.current.value
-        axios.get(`http://localhost:8080/api/hotels?name=${search}&order=${order}`)
-        .then(res => setHotelesFiltradas(res.data.response))
-
-
-
-
+       let info = {
+        name:searchId.current.value,
+        order
+       }
+       dispatch(hotelsFiltred(info))
     }
-
-
-
-
-
-
-
-
-
-
-
+    
 
     return (
         <div className="cities-container">
@@ -67,14 +61,12 @@ export default function Hotels() {
 
 </div>
             <div className="cards-container">
-
-                {hotelesFiltradas.length > 0 ? (
-                    hotelesFiltradas.map((hotel, index) => {
-                        return <HotelCard hotel={hotel} key={index} />
-                    }))
-                    : (
-                        <img className='img-fluid' width='100%' src="./img/notsearch.png" alt="Not Found Search" />
-                    )}
+                {hotels.length > 0 ?(
+                    hotels.map((hotel,index) => {
+                        return <HotelCard hotel={hotel} key={index}/>
+                    })
+                ):(<img className='img-fluid' width='10%' src="https://cdn-icons-png.flaticon.com/512/4952/4952559.png" alt="Not Found Search" />)}
+                
             </div>
         </div>
     )
