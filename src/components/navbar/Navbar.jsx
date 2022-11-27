@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import "./navbar.css";
-import {Link as LinkRouter} from 'react-router-dom'
-
+import { Link as LinkRouter } from 'react-router-dom'
+import { Link as Navlink } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const SideNavBar = () => {
 	const [isExpanded, setExpendState] = useState(false);
-	
+	const { online, role } = useSelector(state => state.user)
+
+
+
+
+
 	return (
 		<div
 			className={
@@ -36,33 +42,86 @@ const SideNavBar = () => {
 
 
 				<div className="nav-menu">
-<LinkRouter to="/Cities">
-<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/tierra.svg" alt="" />
-	 </button> 
-</div>
-</LinkRouter>
-<LinkRouter to="/Hotels">
-<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} > <button><img src="./icons/hotel.svg" alt="" />
-</button> 
-</div>
-</LinkRouter>
-						
+					{!online && (
+						<>
+							<LinkRouter to="/SignIn">
+								<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/iniciarsesion.png" alt="" />
+								</button>
+								</div>
+							</LinkRouter>
+							<LinkRouter to="/SignUp">
+								<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} > <button><img src="./icons/registrarse.png" alt="" />
+								</button>
+								</div>
+							</LinkRouter>
+						</>
+					)}
+
+					{online && role === 'admin' && (
+						<>
+							<LinkRouter to="/NewCity">
+								<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/nuevaciudad.png" alt="" />
+								</button>
+								</div>
+							</LinkRouter>
+							<LinkRouter to="/NewHotel">
+								<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/nuevohotel.png" alt="" />
+								</button>
+								</div>
+							</LinkRouter>
+							<LinkRouter to="/Cities">
+								<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/tierra.svg" alt="" />
+								</button>
+								</div>
+							</LinkRouter>
+							<LinkRouter to="/Hotels">
+								<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} > <button><img src="./icons/hotel.svg" alt="" />
+								</button>
+								</div>
+							</LinkRouter>
+							<LinkRouter to="/MyTineraries">
+								<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/itinerario.png" alt="" />
+								</button>
+								</div>
+							</LinkRouter>
+							<LinkRouter to="/MyShows">
+								<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/show.png" alt="" />
+								</button>
+								</div>
+							</LinkRouter>
+						</>
+					)}
+					<LinkRouter>
+						<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/logout.png" alt="" />
+						</button>
+						</div>
+					</LinkRouter>
+
+
+
+
+
+
+
+
+
+
 				</div>
 			</div>
 
-			
+
 			<div className="nav-footer">
 				{isExpanded && (
 					<div className="nav-details">
 						<img
 							className="nav-footer-avatar"
-							
+
 							alt=""
 							srcset=""
 						/>
 					</div>
 				)}
-				
+
 			</div>
 		</div>
 	);
