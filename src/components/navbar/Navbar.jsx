@@ -79,7 +79,31 @@ const SideNavBar = () => {
 					)}
 
 
+					{online && role === 'admin' && (
+                        <>
+                            <LinkRouter to="/Mycities">
+                                <div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/nuevaciudad.png" alt="" />
+                                </button>
+                                </div>
+                            </LinkRouter>
+                            <LinkRouter to="/MyHotels">
+                                <div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/nuevohotel.png" alt="" />
+                                </button>
+                                </div>
+                            </LinkRouter>
+                            <LinkRouter to="/Cities">
+                                <div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/tierra.svg" alt="" />
+                                </button>
+                                </div>
+                            </LinkRouter>
+                            <LinkRouter to="/Hotels">
+                                <div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} > <button><img src="./icons/hotel.svg" alt="" />
+                                </button>
+                                </div>
+                            </LinkRouter>
 
+                        </>
+                    )}
 
 
 					
