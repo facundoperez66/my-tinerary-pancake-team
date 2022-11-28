@@ -17,6 +17,7 @@ import MyItineraries from './pages/MyTineraries/MyTineraries';
 import MyHotels from './pages/Myhotels/MyHotels';
 import MyShows from './pages/MyShows/MyShows';
 import {useEffect} from 'react';
+import Profile from './pages/Profile/Profile';
 
 import { useDispatch, useSelector } from "react-redux";
 import userActions from './redux/actions/userActions';
@@ -70,6 +71,7 @@ function App() {
     <Route path='/MyTineraries' element={<MyItineraries />} />
     <Route path='/MyShows' element={<MyShows />} />
 </Route>
+<Route path='/Profile' element={<Profile />}/>
 </Routes>
 
    </Main>
