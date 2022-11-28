@@ -17,7 +17,11 @@ import MyItineraries from './pages/MyTineraries/MyTineraries';
 import MyHotels from './pages/Myhotels/MyHotels';
 import MyShows from './pages/MyShows/MyShows';
 import {useEffect} from 'react';
+
+import NewItinerary from "./pages/NewItinerary/NewItinerary";
+
 import Profile from './pages/Profile/Profile';
+
 
 import { useDispatch, useSelector } from "react-redux";
 import userActions from './redux/actions/userActions';
@@ -62,6 +66,7 @@ function App() {
 <Route path='/SignUp' element={<SignUp/>}/>
 <Route path='/NewCity' element={<NewCity/>}/>
 <Route path='/NewHotel' element={<NewHotel/>}/>
+
 <Route path="/detailsC/:id" element={<DetailsCity />} />
 <Route path="/detailsH/:id" element={<DetailHotel />} />
 <Route element={<RouteProtect isAllowed={!!online  && role === 'admin'} reDirect='/signin' />}>
@@ -69,6 +74,7 @@ function App() {
 <Route path='/MyHotels' element={<MyHotels />} />
 </Route>
 <Route element={<RouteProtect isAllowed={!!online} reDirect='/signin' />}>
+<Route path="/newItinerary" element={<NewItinerary />} />
     <Route path='/MyTineraries' element={<MyItineraries />} />
     <Route path='/MyShows' element={<MyShows />} />
 </Route>

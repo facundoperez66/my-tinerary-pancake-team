@@ -134,9 +134,24 @@ const SideNavBar = () => {
 					{online && (
 
 						<>
+				<LinkRouter to='/newitinerary' classN='btn3' text='NEW ITINERARY' >
+				<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} > <button><img src="./icons/itinerarionuevo.png" alt="" />
+								</button>
+								</div>
+							</LinkRouter>
 
-							<LinkRouter rute='/MyTineraries' text='MY ITINERARY' />
-							<LinkRouter rute='/MyShows' text='MY SHOWS' />
+							<LinkRouter to='/MyTineraries' text='MY ITINERARY' >
+							<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} > <button><img src="./icons/itinerariosad.png" alt="" />
+								</button>
+								</div>
+							</LinkRouter>
+
+							<LinkRouter to='/MyShows' text='MY SHOWS' >
+							<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} > <button><img src="./icons/show123.png" alt="" />
+								</button>
+								</div>
+							</LinkRouter>
+
 							<div  className={isExpanded ? "menu-item" : "menu-item menu-item-NX" } >
 						<ButtonExit  fx={signOut} text='LOG OUT' />
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch} from 'react-redux'
+import { useDispatch, useSelector} from 'react-redux'
 import actionsCity from '../../redux/actions/cityActions'
 import Swal from 'sweetalert2'
 import "./CityCardAdmin.css"
@@ -8,6 +8,8 @@ export default function CityCardAdmin(props) {
     let { city } = props
     const dispatch = useDispatch()
     const { deleteCity, updateCity } = actionsCity
+    const { cities } = useSelector(state => state.city)
+    const { token } = useSelector(state => state.user)
 
     async function deleteAdmin() {
         try {
@@ -26,8 +28,12 @@ export default function CityCardAdmin(props) {
                         'Your file has been deleted.',
                         'success'
                     )
-                    dispatch(deleteCity(city._id))
-                    window.location.reload()
+                    let data = {
+                        id: city._id,
+                        token
+                    }
+                    dispatch(deleteCity(data))
+                    
                 }
             })
 
@@ -35,6 +41,8 @@ export default function CityCardAdmin(props) {
             console.log(error)
         }
     }
+
+    let continents = [...new Set(cities.map(city => city.continent))]
 
     async function updateAdmin() {
         try {
@@ -46,7 +54,15 @@ export default function CityCardAdmin(props) {
                     '<input placeHolder="Name" id="name" class="swal2-input">' +
                     '<input placeHolder="Continent"id="continent" class="swal2-input">' +
                     '<input placeHolder="Photo Url"id="photo" class="swal2-input">' +
-                    '<input placeHolder="Population"id="population" class="swal2-input">',
+                    '<input placeHolder="Population"id="population" class="swal2-input">'+
+                    `<select id='continent' class="swal2-input"> 
+                    ${continents.map(cont => {
+                        if(city.continent === cont){
+                            return `<option selected value="${cont}">${cont}</option>`
+                        }else{
+                            return `<option value="${cont}">${cont}</option>`
+                        }})} 
+                    </select>`,
                 focusConfirm: false,
                 preConfirm: () => {
                     let name = document.getElementById('name').value
@@ -56,11 +72,12 @@ export default function CityCardAdmin(props) {
 
                     let data = {
                         id: city._id,
+                        token,
                         citie: {
 
                         }
                     }
-
+                    console.log(token)
                     if(name !== ''){
                         data.citie.name = name
                     }
@@ -110,4 +127,5 @@ export default function CityCardAdmin(props) {
 
         </div>
     )
+    
 }
