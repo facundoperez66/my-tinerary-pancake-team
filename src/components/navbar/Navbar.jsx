@@ -92,7 +92,7 @@ const SideNavBar = () => {
 
 
 					{online && (
-						<LinkRouter rute='/myprofile' text='MY PROFILE' >
+						<LinkRouter to='/Profile' text='MY PROFILE' >
 							<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/perfil123.png" alt="" />
 							</button>
 							</div>
@@ -147,6 +147,12 @@ const SideNavBar = () => {
 							</LinkRouter>
 
 							<LinkRouter to='/MyShows' text='MY SHOWS' >
+							<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} > <button><img src="./icons/show123.png" alt="" />
+								</button>
+								</div>
+							</LinkRouter>
+
+							<LinkRouter to='/newShow' text='MY SHOWS' >
 							<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} > <button><img src="./icons/show123.png" alt="" />
 								</button>
 								</div>

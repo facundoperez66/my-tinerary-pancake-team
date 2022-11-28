@@ -19,6 +19,7 @@ import MyShows from './pages/MyShows/MyShows';
 import {useEffect} from 'react';
 
 import NewItinerary from "./pages/NewItinerary/NewItinerary";
+import NewShows from './pages/NewShows/NewShows';
 
 import Profile from './pages/Profile/Profile';
 
@@ -75,6 +76,7 @@ function App() {
 </Route>
 <Route element={<RouteProtect isAllowed={!!online} reDirect='/signin' />}>
 <Route path="/newItinerary" element={<NewItinerary />} />
+<Route path='/newShow' element={<NewShows/>}/>
     <Route path='/MyTineraries' element={<MyItineraries />} />
     <Route path='/MyShows' element={<MyShows />} />
 </Route>
