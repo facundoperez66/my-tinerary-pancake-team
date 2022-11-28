@@ -37,3 +37,14 @@
     justify-content: space-around;
     align-items: center;
 }
+.edits{
+    display: flex;
+    padding: 10px;
+
+}
+
+.edits p{
+    padding: 5px;
+    background-color: var(--live);
+    color: var(--lighter);
+}
