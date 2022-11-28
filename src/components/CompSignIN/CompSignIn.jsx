@@ -71,7 +71,7 @@ export default function CompSignIn() {
             
             </div>
             <div >
-            <form ref={form} id = 'form'action="index" method='get' className='form-signin'>
+            <form ref={form} id = 'form' action="index" method='get' className='form-signin'>
             <label htmlFor="username">User</label>
                 <Inputs refId={email} type="text" placeholder='Enter Email'  id='usernamejs'/>
             
@@ -89,3 +89,4 @@ export default function CompSignIn() {
     
   )
 }
+

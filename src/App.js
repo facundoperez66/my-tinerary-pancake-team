@@ -16,26 +16,31 @@ import MyCities from './pages/Mycities/MyCities';
 import MyItineraries from './pages/MyTineraries/MyTineraries';
 import MyHotels from './pages/Myhotels/MyHotels';
 import MyShows from './pages/MyShows/MyShows';
+import {useEffect} from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import RouteProtect from './components/RouteProtect/RouteProtect';
 import userActions from './redux/actions/userActions';
+import React from 'react';
+import RouteProtect from './components/RouteProtect/RouteProtect';
+
 
 function App() {
 
-
   const dispatch = useDispatch()
-  const { reLogin } = userActions
+  const {reLogin} = userActions
+  const token = JSON.parse(localStorage.getItem('token'))
   const { online} = useSelector(state => state.user)
-  const token = JSON.parse(localStorage.getItem("token"))
 
-
-  useEffect(() => {
-    if (token) {
-        dispatch(reLogin(token.token.user))
+  useEffect(()=>{
+    if(token){
+      dispatch(reLogin(token.token.user))
     }
-    // eslint-disable-next-line
-}, [])
+  
+  },[])
+
+
+
+
+
 
   return (
     <>
@@ -56,9 +61,7 @@ function App() {
 <Route path="/detailsC/:id" element={<DetailsCity />} />
 <Route path="/detailsH/:id" element={<DetailHotel />} />
 <Route path='/Mycities' element={<MyCities />} />
-<Route path='/MyTineraries' element={<MyItineraries />} />
 <Route path='/MyHotels' element={<MyHotels />} />
-<Route path='/MyShows' element={<MyShows />} />
 <Route element={<RouteProtect isAllowed={!!online} reDirect='/signin' />}>
     <Route path='/MyTineraries' element={<MyItineraries />} />
     <Route path='/MyShows' element={<MyShows />} />
