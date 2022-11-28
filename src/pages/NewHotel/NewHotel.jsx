@@ -86,7 +86,7 @@ function NewHotel() {
                     <h4>Capacity</h4>
                     <Inputs
                         refId= {capacity}
-                        type="text"
+                        type="number"
                         placeholder="Capacity"
                         className='form__input'
                        
@@ -116,6 +116,7 @@ function NewHotel() {
                         className='form__input'
                         
                     />
+              
                     <label for="cityId">
                         Select a City: 
                     </label>

@@ -16,8 +16,28 @@ import MyCities from './pages/Mycities/MyCities';
 import MyItineraries from './pages/MyTineraries/MyTineraries';
 import MyHotels from './pages/Myhotels/MyHotels';
 import MyShows from './pages/MyShows/MyShows';
+import {useEffect} from 'react';
+import { useDispatch } from 'react-redux';
+import userActions from './redux/actions/userActions';
+import React from 'react';
 
 function App() {
+
+  const dispatch = useDispatch()
+  const {reLogin} = userActions
+  const token = JSON.parse(localStorage.getItem('token'))
+
+  useEffect(()=>{
+    if(token){
+      dispatch(reLogin(token.token.user))
+    }
+  
+  },[])
+
+
+
+
+
 
   return (
     <>
