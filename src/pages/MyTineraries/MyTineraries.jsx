@@ -11,10 +11,10 @@ export default function MyItineraries() {
     const { itineraries } = useSelector(state => state.city)
     const { getItineraries } = actionsCity	
 
-    let admId = '636fe5cd55d86e11bfaebc4a'
+    const { id} = useSelector(state => state.user)
 
     useEffect(() => {
-        dispatch(getItineraries(admId))
+        dispatch(getItineraries(id))
         // eslint-disable-next-line
     }, [])
 
@@ -30,7 +30,7 @@ export default function MyItineraries() {
 
                 {itineraries.length > 0 ? (
                     itineraries.map((itinerary, index) => {
-                        return <ItineraryCardAdmin itineraries={itinerary} key={index} idAdm={admId} />
+                        return <ItineraryCardAdmin itineraries={itinerary} key={index} idAdm={id} />
                     }))
                     : (
                         <img className='img-fluid' width='100%' src="./img/notsearch.png" alt="Not Found Search" />
