@@ -3,17 +3,43 @@ import React, { useState } from "react";
 import "./navbar.css";
 import { Link as LinkRouter } from 'react-router-dom'
 import { Link as Navlink } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-
+import ButtonExit from "../ButtonExit/ButtonExit";
+import { useSelector, useDispatch } from 'react-redux'
+import userActions from "../../redux/actions/userActions"
+import Swal from 'sweetalert2'
 
 
 
 
 
 const SideNavBar = () => {
+	const dispatch = useDispatch()
 	const [isExpanded, setExpendState] = useState(false);
-	const { online, role } = useSelector(state => state.user)
+	const { online, role, token } = useSelector(state => state.user)
+	const { logout } = userActions
 
+
+	function signOut() {
+		Swal.fire({
+			title: 'Do you want to exit?',
+			text: "You will need to log in again later.",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes, log out!'
+		})
+			.then((result) => {
+				if (result.isConfirmed) {
+					dispatch(logout(token))
+					Swal.fire(
+						'Logged out!',
+						'You have been logged out',
+						'success'
+					)
+				}
+			})
+	}
 
 
 
@@ -63,61 +89,60 @@ const SideNavBar = () => {
 						</>
 					)}
 
-					{role === 'user' && (
-						<>
-							<LinkRouter to="/MyTineraries">
-								<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/itinerario.png" alt="" />
-								</button>
-								</div>
-							</LinkRouter>
-							<LinkRouter to="/MyShows">
-								<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/show.png" alt="" />
-								</button>
-								</div>
-							</LinkRouter>
-						</>
+
+
+					{online && (
+						<LinkRouter rute='/myprofile' text='MY PROFILE' >
+							<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/perfil123.png" alt="" />
+							</button>
+							</div>
+
+
+						</LinkRouter>
 					)}
+					
+
+
 
 
 					{online && role === 'admin' && (
-                        <>
-                            <LinkRouter to="/Mycities">
-                                <div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/nuevaciudad.png" alt="" />
-                                </button>
-                                </div>
-                            </LinkRouter>
-                            <LinkRouter to="/MyHotels">
-                                <div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/nuevohotel.png" alt="" />
-                                </button>
-                                </div>
-                            </LinkRouter>
-                            <LinkRouter to="/Cities">
-                                <div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/tierra.svg" alt="" />
-                                </button>
-                                </div>
-                            </LinkRouter>
-                            <LinkRouter to="/Hotels">
-                                <div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} > <button><img src="./icons/hotel.svg" alt="" />
-                                </button>
-                                </div>
-                            </LinkRouter>
+						<>
+							<LinkRouter to="/Mycities">
+								<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/nuevaciudad.png" alt="" />
+								</button>
+								</div>
+							</LinkRouter>
+							<LinkRouter to="/MyHotels">
+								<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/nuevohotel.png" alt="" />
+								</button>
+								</div>
+							</LinkRouter>
+							<LinkRouter to="/Cities">
+								<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/tierra.svg" alt="" />
+								</button>
+								</div>
+							</LinkRouter>
+							<LinkRouter to="/Hotels">
+								<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} > <button><img src="./icons/hotel.svg" alt="" />
+								</button>
+								</div>
+							</LinkRouter>
 
-                        </>
-                    )}
+						</>
+					)}
 
-
-					
 					{online && (
-					<LinkRouter>
-						<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/logout.png" alt="" />
-						</button>
-						</div>
-					</LinkRouter>
-					 )}
 
+						<>
 
+							<LinkRouter rute='/MyTineraries' text='MY ITINERARY' />
+							<LinkRouter rute='/MyShows' text='MY SHOWS' />
+							<div  className={isExpanded ? "menu-item" : "menu-item menu-item-NX" } >
+						<ButtonExit  fx={signOut} text='LOG OUT' />
 
-
+					</div>
+						</>
+					)}
 
 
 
