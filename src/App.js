@@ -17,10 +17,12 @@ import MyItineraries from './pages/MyTineraries/MyTineraries';
 import MyHotels from './pages/Myhotels/MyHotels';
 import MyShows from './pages/MyShows/MyShows';
 import {useEffect} from 'react';
+
 import { useDispatch, useSelector } from "react-redux";
 import userActions from './redux/actions/userActions';
 import React from 'react';
 import RouteProtect from './components/RouteProtect/RouteProtect';
+
 
 
 function App() {
@@ -28,7 +30,9 @@ function App() {
   const dispatch = useDispatch()
   const {reLogin} = userActions
   const token = JSON.parse(localStorage.getItem('token'))
+
   const { online} = useSelector(state => state.user)
+
 
   useEffect(()=>{
     if(token){
