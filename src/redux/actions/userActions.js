@@ -56,6 +56,38 @@ const logout = createAsyncThunk('logout', async (token) => {
     }
 })
 
+const getUser = createAsyncThunk('getUser', async (id) => {
+    try{
+        let user= await axios.get(`${BASE_URL}/api/auth/me/${id}`)
+        return {
+            success: true,
+            response: user.date.data,
+
+        }
+    }catch(error){
+        return {
+            success: false,
+            response: error.response.data.message
+        }
+    }
+})
+
+const updateUser = createAsyncThunk('updateUser', async (info) => {
+    try {
+        let user = await axios.patch(`${BASE_URL}/api/auth/me/${info.id}`, info.user)
+        console.log(user)
+        return {
+            success: true,
+            response: user.data.data
+        }
+    } catch (error) {
+        return {
+            success: false,
+            response: error.response.data.message
+        }
+    }
+})
+
 
 
 
@@ -63,7 +95,9 @@ const logout = createAsyncThunk('logout', async (token) => {
 const userActions = {
     login,
     reLogin,
-    logout
+    logout,
+    getUser,
+    updateUser
 }
 
 export default userActions

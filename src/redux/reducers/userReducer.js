@@ -1,7 +1,7 @@
 import { createReducer } from "@reduxjs/toolkit";
 import userActions from "../actions/userActions";
 
-const { login, reLogin, logout } = userActions;
+const { login, reLogin, logout, getUser, updateUser } = userActions;
 
 const initialState = {
     name: '',
@@ -10,6 +10,8 @@ const initialState = {
     role: '',
     online: false,
     token: '',
+    id: '',
+    user: {},
 };
 
 const userReducers = createReducer(initialState, (builder) => {
@@ -40,6 +42,20 @@ const userReducers = createReducer(initialState, (builder) => {
                 return { ...state, name: '', email: '', photo: '', role: '', online: false, token: '' }
             } else {
                 return { ...state, mensaje: response }
+            }
+        })
+
+        .addCase(getUser.fulfilled, (state,action) => {
+            if (action.payload.success){
+                return{
+                    ...state, user: action.payload.response
+                }
+            }
+        }) 
+
+        .addCase(updateUser.fulfilled, (state, action) => {
+            if (action.payload.success) {
+                return { ...state, user: action.payload.response , name: action.payload.response.name, photo: action.payload.response.photo, email: action.payload.response.email }
             }
         })
         
