@@ -4,7 +4,7 @@ import { useParams } from 'react-router';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BASE_URL } from '../../api/url';
-import CardDetails from '../../components/CardDetails2/CardDetails2';
+
 import CardHotel from '../../components/CardHotels/CardHotels';
 
 export default function DetailsHotels() {

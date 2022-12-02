@@ -226,106 +226,92 @@ export default function MyProfile() {
    }
 
 
-    return (
-        <main className="ClaseContenedoraProfiles1">
-            
-            <div className="Main-Profiles123">
-                <form>
-                    <div className="cardForm1232331">
-                        <h1 className="text-palette2 titleForm">My Profile</h1>
-                        <div className='flex cardFormPerfil container-fluid gap-1-5'>
-                            <div className='claseImagenPerfil1'>
-                                
-                                <img width='350px' className="" src={user.photo} alt="drawing" />
-                                <div className='flexgap-1'>
-                                <p onClick={updatePhoto}> updatePhoto</p>
-                                </div>
-                            </div>
-                            <div className='flex column gap-1 justify-center align-center container-fluid'>
-                                <div className="flex column gap-3">
-                                    <div className='flex column gap-1'>
-                                        <div className='flexgap-1 align-center'>
-                                            <p onClick={updateName}> updateName</p>
-                                            <h2 className='textPerfil'>Name: {user.name}</h2>
-                                            
-                                        </div>
-                                        <div className='flexgap-1'>
-                                            <p onClick={updateLastName}> updateLastName</p>
-                                            <h2 className='textPerfil'>Last Name: {user.lastName}</h2>
-                                            
-                                        </div>
-                                        <div className='flexgap-1'>
-                                             <p onClick={updateEmail}> updateEmail</p>
-                                            <h2 className='textPerfil textEmail'>Email: {user.email}</h2>
-                                            
-                                        </div>
-                                        <div className='flexgap-1'>
-                                            <p onClick={updateAge}> updateAge</p>
-                                            <h2 className='textPerfil'>Age: {user.age}</h2>
-                                            
-                                        </div>
+   return (
+      <main className="ClaseContenedoraProfiles1">
 
+         <div className="Main-Profiles123">
+            <form>
+               <div className="cardForm1232331">
+                  <h1 className="text-palette2 titleForm">My Profile</h1>
+                  <div className='flex cardFormPerfil container-fluid gap-1-5'>
+                     <div className='claseImagenPerfil1'>
 
-
-                                    </div>
-                                    <div className='contraseñaProfile1'>
-                                        <button onClick={updatePassword} className="">Change Password</button>
-                                        <button onClick={mostrarEvento1} className="">See my reactions</button>
-                                    </div>
-
-                                </div>
-                            </div>
+                        <img width='350px' className="" src={user.photo} alt="drawing" />
+                        <div className='flexgap-1'>
+                           <p onClick={updatePhoto}> updatePhoto</p>
                         </div>
-                    </div>
-                </form>
-                <div className='flex justify-center wrap gap-2'>
+                     </div>
+                     <div className='flex column gap-1 justify-center align-center container-fluid'>
+                        <div className="flex column gap-3">
+                           <div className='flex column gap-1'>
+                              <div className='flexgap-1 align-center'>
+                                 <p onClick={updateName}> updateName</p>
+                                 <h2 className='textPerfil'>Name: {user.name}</h2>
+
+                              </div>
+                              <div className='flexgap-1'>
+                                 <p onClick={updateLastName}> updateLastName</p>
+                                 <h2 className='textPerfil'>Last Name: {user.lastName}</h2>
+
+                              </div>
+                              <div className='flexgap-1'>
+                                 <p onClick={updateEmail}> updateEmail</p>
+                                 <h2 className='textPerfil textEmail'>Email: {user.email}</h2>
+
+                              </div>
+                              <div className='flexgap-1'>
+                                 <p onClick={updateAge}> updateAge</p>
+                                 <h2 className='textPerfil'>Age: {user.age}</h2>
+
+                              </div>
+
+
+
+                           </div>
+                           <div className='contraseñaProfile1'>
+                              <button onClick={updatePassword} className="">Change Password</button>
+                              <button onClick={mostrarEvento1} className="">See my reactions</button>
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </form>
+            <div className='flex justify-center wrap gap-2'>
                {mostrarEventoUno && myReactions.length > 0 ? (
                   myReactions.map((reaction, index) => {
-                    console.log(reaction)
+                     console.log(reaction)
                      let classReaction
                      if (reaction.name === reaction.name) {
                         classReaction = `cardPerfil ${reaction.name}`
                      } else {
-                        classReaction = `cardPerfil`
+                        classReaction = `cardPerfil ${reaction.name}`
                      }
-                     
+
                      return (
-                        
+
                         <div key={index} className="ReactionsCardsPruebaVer12">
                            <div className="">
-                              
 
-                                <CardReactions reaction={reaction.showId || reaction.itineraryId} name={reaction.name} icon={reaction.icon} id={reaction._id} fxDelete={deleteReactionUser} />
 
-                            </div>
-                              </div>
-                           
-                           )
+                              <CardReactions reaction={reaction.showId || reaction.itineraryId} name={reaction.name} icon={reaction.icon} id={reaction._id} fxDelete={deleteReactionUser} />
+
+                           </div>
+                        </div>
+
+                     )
                   })
 
-                  ) : mostrarEventoUno && (
-                    <div className='flex column align-center m-t-3 p-3'>
-                       
-                       <h4>You have no reactions, go to <Navlink to='/Hotels' style={{ textDecoration: 'none' }}> Hotels </Navlink> or <Navlink to='/Cities' style={{ textDecoration: 'none' }}> Hotels </Navlink> </h4>
-                    </div>
+               ) : mostrarEventoUno && (
+                  <div className='flex column align-center m-t-3 p-3'>
+
+                     <h4>You have no reactions, go to <Navlink to='/Hotels' style={{ textDecoration: 'none' }}> Hotels </Navlink> or <Navlink to='/Cities' style={{ textDecoration: 'none' }}> Hotels </Navlink> </h4>
+                  </div>
                )}
 
-</div>
-                
-
-
-
-
-
-
-
-
-
-                
             </div>
 
-            
-            
 
 
 
@@ -333,6 +319,20 @@ export default function MyProfile() {
 
 
 
-        </main>
-    )
+
+
+
+         </div>
+
+
+
+
+
+
+
+
+
+
+      </main>
+   )
 }

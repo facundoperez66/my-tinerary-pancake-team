@@ -58,14 +58,14 @@ export default function Reaction(props) {
                     let res = react.userId.find(user => user._id === id)
                     return (
                         
-                        <div key={react.name} className='Viendo1234123123213'>
+                        <div key={react.name} className='eventoreaction'>
                             {
                                 res ? (
                                     <div className='asdasdasdasdsa'>
                                         {react.userId.length > 0 && (
                                         <div>{react.userId.map(user => {
-                                            return (<div className='VeamosQueEsEsto123'>
-                                                <img className='' src={user.photo} alt="" />
+                                            return (<div className='FotoPresentacionPeque'>
+                                                <img className='fotoDeUsuarioReaccion123' src={user.photo} alt="" />
                                                 <p>{user.name} {user.lastName}</p>
                                             </div>)
                                         })}</div>
@@ -79,7 +79,7 @@ export default function Reaction(props) {
                                             react.userId.length > 0 && (
                                                 <div>{react.userId.map(user => {
                                                     return (<div className=''>
-                                                        <img className='' src={user.photo} alt="" />
+                                                        <img className='FotoGrandePresentacion' src={user.photo} alt="" />
                                                         <p>{user.name} {user.lastName}</p>
                                                     </div>)
                                                 })}</div>

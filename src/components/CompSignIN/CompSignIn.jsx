@@ -81,7 +81,7 @@ export default function CompSignIn() {
     <BotonEnviar fx={enviarFormulario} type="submit"  value='Submit'/>
 
             <a href="signup"> Don't Have an Account? </a>
-            <GoogleButton/>
+            
         </form>
             </div>
         </div>
