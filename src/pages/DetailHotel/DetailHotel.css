@@ -1,7 +1,95 @@
-.CONTENEDORINFERIOR34{
-    border: 4px solid red;
-    height: 100vh;
+.CONTENEDORMAYOR1234124{
+
+    min-height: 100vh;
+    width: 100%;
+    background-color: #3E78B2;
+}
+
+
+.PARTESUPERIOR123213{
+
+    height: 30rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 2cm;
+}
+
+
+.img-card1231231312{
+
+    width: 50rem;
+    display: flex;
+    justify-content: center;
+}
+
+.img-card1231231312 img{
+    height: 30rem;
+    width: 30rem;
+    padding: 15px;
+}
+
+
+.card-detail323423423{
+
+    display: flex;
+}
+
+
+
+.conenido-card123123123{
+
+    height: 20rem;
+    width: 50rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-size: x-large;
+}
+
+
+
+
+
+
+.HotelContenedorDetalles123{
+    background: url(https://img.freepik.com/vector-gratis/fondo-ciudad-noche-luces-neon_1441-2588.jpg);
+    background-repeat: initial;
+    background-size: cover;
+    
+    min-height: 100vh;
+}
+
+.ParteSuperiorHotelesDetalles1234{
+    
+    height: 40rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+    color: white;
+    font-size: xx-large;
+}
+
+
+
+.BotonesDeCardHotelsDetails123{
+    
+    display: flex;
+    justify-content: space-around;
+}
+
+.BotonesDeCardHotelsDetails123 button{
+    height: 2rem;
+    width: 7rem;
+    font-size: x-large;
+}
+
+
+
+.ShowsSeparacion1234{
+    display: flex;
 }

@@ -1,0 +1,93 @@
+.FondoNewReaction123{
+    min-height: 100vh;
+    width: 100%;
+    background: url(https://img.freepik.com/vector-premium/diferentes-reacciones-fondo-espacio-copia_79603-1022.jpg);
+    background-repeat: initial;
+    background-size: cover;
+}
+
+
+
+.CardNewReactions123{
+   
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.CartaMayorNewReacions123123{
+    margin-top: 18rem;
+    border: 4px solid white;
+    height: 45rem;
+    width: 30rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background: url(https://i.pinimg.com/736x/45/80/d4/4580d43069513a8386c1b3af62eb4809.jpg);
+}
+
+
+.MainNewReacion123{
+    
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.CardPruebaNewReaction123{
+    
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.CardNewReactions123 input{
+    height: 2rem;
+    font-size: x-large;
+
+}
+
+
+.CardNewReactions123 select{
+    height: 2rem;
+    width: 18rem;
+    font-size: x-large;
+}
+
+
+.tituloNewReactions123{
+    font-size: x-large;
+}
+
+
+.CartaMayorNewReacions h1{
+    text-align: center;
+}
+
+
+
+.oiqjwodqwdwqdwqwdwq{
+    
+    display: flex;
+    flex-direction: column;
+}
+
+
+.CartaPersonalizar1234123{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    
+    height: 35rem;
+    font-size: x-large;
+}

@@ -1,0 +1,107 @@
+:root {
+    --lighter: #FFFFFF;
+    --main: #3E78B2;
+    --expression: #004BA8;
+    --strong: #c1c9d3;
+    --live: #07070A;
+  }
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+
+.cities-container{
+    width: 100%;
+    min-height: 100vh;
+    
+    background: url(https://static.vecteezy.com/system/resources/previews/006/528/133/original/world-map-connection-background-map-design-technology-communication-connecting-vector.jpg);
+    background-repeat: initial;
+    background-size: cover;
+    
+    
+
+}
+
+.cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+   
+}
+
+.category-container{
+   
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+}
+
+
+
+
+.prueba12321{
+    width: 25rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prueba12321 input{
+    width: 20rem;
+    height: 2rem;
+}
+
+.TituloHeader3{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 30rem;
+    flex-direction: column;
+    background-color: #004BA8;
+    color: var(--lighter);
+    
+}
+.TituloHeader3 h2{
+    padding-bottom: 10rem;
+    font-size: 2cm;
+    
+}
+
+
+
+.img-fluid{
+    margin-top: 5rem;
+
+}
+
+
+
+.pruebaChecks1234{
+   
+    font-size: xx-large;
+    gap: 2rem   
+}
+
+
+.search-input123{
+    height: 3rem;
+    font-size: x-large;
+    width: 30rem;
+}
+
+
+
+
+.img-NotFoundCities123214{
+    height: 30rem;
+    width: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8rem;
+}

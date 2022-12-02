@@ -1,0 +1,59 @@
+
+.ParteSuperior23{
+    min-height: 100vh;
+    
+}
+.PruebaBotons2{
+    
+    height: 10rem;
+    width: 10rem;
+    display: flex;
+    
+    align-items: center;
+    width: 128rem;
+    gap: 2rem;
+    
+
+}
+
+.PruebaBotons2 button{
+    height: 50px;
+    width: 95px;
+    background-color: ivory;
+    border-radius: 4rem;
+}
+.PruebaBotons2 p{
+  font-weight: bolder;
+}
+
+
+
+  .ParteSuperiorIzquierda{
+    
+    width: 15rem;
+    height:10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    text-decoration: none;
+  }
+
+  .ClaseDeBotones123{
+    
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+  }
+
+
+  .ParteSuperiorIzquierda p{
+    font-size: xx-large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    cursor: pointer;
+    text-decoration-color: none;
+    color: white;
+  }

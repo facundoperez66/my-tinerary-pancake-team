@@ -1,0 +1,48 @@
+.ContenedoraCardItinerary12345{
+    border: 1px solid red;
+    padding: 15px;
+}
+
+
+
+.ParteDeLaFotoCard1232{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.ParteDeLaFotoCard1232 img{
+    height: 30rem;
+    width: 40rem;
+}
+
+
+.ParteDeLaInfoCard123{
+    
+    font-size: x-large;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.CardsContenedorasDeTodo1234{
+    display: flex;
+    justify-content: center;
+}
+
+
+.ParteDeLaInfoCard123 p{
+    text-align: center;
+    font-size: xx-large;
+}
+
+.ParteDeLaInfoCard123 h1{
+    font-weight: bolder;
+    color: gray;
+}

@@ -1,0 +1,36 @@
+
+.cities-container123333{
+    
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+   
+    
+}
+
+
+.CONTENEDOR-PADRRES123213213{
+    
+    background: url(https://c4.wallpaperflare.com/wallpaper/595/321/104/cabinas-ciudad-europa-inglaterra-wallpaper-preview.jpg);
+    background-repeat: initial;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+
+.MYcities123213{
+    
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2cm;
+}
+
+
+
+.AddNewCityPart123124{
+    
+    height: 5rem;
+    width: 100%;
+}

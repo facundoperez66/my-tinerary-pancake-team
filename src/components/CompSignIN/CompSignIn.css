@@ -16,8 +16,9 @@
     justify-content: center;
     align-items: center;
     min-height: 90vh;
-    background-color: var(--main);
-    
+    background: url(https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-fresh-cartoon-cute-city-silhouette-background-backgroundcity-silhouetteadvertising-backgroundbackground-image_64592.jpg);
+    background-repeat: initial;
+    background-size: cover;
 }
 .form-signin{
     display: flex;
