@@ -92,4 +92,5 @@
 
 .ShowsSeparacion1234{
     display: flex;
+    justify-content: space-between;
 }

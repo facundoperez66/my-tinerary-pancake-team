@@ -10,6 +10,7 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    color: white;
 }
 .shows1234{
     height: 35rem;
@@ -20,4 +21,10 @@
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bolder ;
+}
+
+
+.hotel-cardcontaine33 img{
+    width: 10rem;
+    height: 10rem;
 }

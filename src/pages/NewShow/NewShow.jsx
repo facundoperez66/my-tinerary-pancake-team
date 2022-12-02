@@ -85,7 +85,7 @@ export default function NewShow() {
                                     <Inputs classN="" type="number" place="Price" id="price" refId={price} />
                                     <Inputs classN="" type="date" place="Date" id="date" refId={date} />
                                     <label className='' htmlFor='hotelId'>Select a Hotel :</label>
-                                    <select ref={hotelId} className="" id="hotelId">
+                                    <select ref={hotelId} className="SelectModificadoNuevosShows123" id="hotelId">
                                         {hotels.map(hotel => <option key={hotel._id} value={hotel._id}>{hotel.name}</option>)}
                                     </select>
                                 </div>

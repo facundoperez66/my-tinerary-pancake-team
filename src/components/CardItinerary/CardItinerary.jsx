@@ -27,7 +27,7 @@ export default function CardItinerary(props) {
                 <div className=''>
                     <p>Price : ${itinerary.price}</p>
                     </div>
-                    <div className="">
+                    <div className="PosicionamientodeReaction123">
                         <Reaction eventId={itinerary._id} type='itinerary' />
                     </div>
                 </div>

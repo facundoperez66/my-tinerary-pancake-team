@@ -19,10 +19,12 @@ export default function MyItineraries() {
     }, [])
 
     return (
-        <div className="cities-container flex m-t-16">
-            <img className='imgFondo' src='../img/fondo.jpg' alt='fondo-img' />
-            <div className="cards-container container-fluid w-90 flex wrap gap-2 justify-center align-center">
+        <div className="cities-container">
+            
+            <div className="cards-container">
+                <div className='SeparacionNuevoItinerario1234'>
                 <CompNuevasCards text='itinerary' reDirect='/newitinerary' />
+                </div>
                 {itineraries.length > 0 && (
                     itineraries.map((itinerary, index) => {
                         return <ItineraryCardAdmin itineraries={itinerary} key={index} idAdm={id} />

@@ -1,4 +1,4 @@
-.VeamosQueEsEsto123{
+.FotoPresentacionPeque{
     height: 20rem;
     width: 20rem;
     display: flex;
@@ -7,16 +7,23 @@
 }
 
 
-.VeamosQueEsEsto123 img{
+.FotoPresentacionPeque img{
     height: 100px;
     width: 100px;
 }
 
 
 
-.Viendo1234123123213{
+.eventoreaction{
     
     height: 25rem;
 }
 
 
+
+
+.FotoGrandePresentacion{
+    
+    height: 100px;
+    width: 100px;
+}

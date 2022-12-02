@@ -1,6 +1,6 @@
 import './Newcity.css'
 import React, {  useRef } from 'react';
-import BotonEnviar from '../../components/BotonEnviar/BotonEnviar';
+import BotonEnviarForm from '../../components/BotonEnviar/BotonEnviar';
 import { useDispatch, useSelector } from "react-redux"
 import Inputs from '../../components/inputs/Inputs';
 import actionsCity from '../../redux/actions/cityActions';
@@ -76,7 +76,7 @@ export default function NewCity() {
                                     <Inputs classN="signup-input" type="text" place='Url Photo' id="photo" refId={photo} />
                                     <Inputs classN="signup-input" type="number" place="Population" id="population" refId={population} />
                                 </div>
-                                <BotonEnviar fx={enviarFormulario} texto='Create City' />
+                                <BotonEnviarForm fx={enviarFormulario} texto='Create City' />
                             </div>
                         </div>
                     </div>

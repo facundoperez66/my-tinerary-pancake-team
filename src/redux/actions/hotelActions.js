@@ -3,6 +3,8 @@ import axios from "axios";
 
 import { BASE_URL } from '../../api/url'
 
+
+
 const getAllHotels = createAsyncThunk("getAllHotels", async () => {
     try {
         const res = await axios.get(`${BASE_URL}/api/hotels`)
@@ -26,12 +28,9 @@ const getHotelsFiltered = createAsyncThunk("getHotelsFiltered", async (data) => 
         return dataReduce
     } catch (error) {
         console.log(error)
-        const dataReduce = {
-            res: [],
-            name: data.name,
-            order: data.order
+        return {
+            payload: 'Error'
         }
-        return dataReduce
     }
 })
 
@@ -112,18 +111,6 @@ const getShows = createAsyncThunk("getShows", async (id) => {
     }
 })
 
-const getAllShows = createAsyncThunk("getAllShows", async (id) => {
-    try {
-        const res = await axios.get(`${BASE_URL}/api/shows`)
-        return res.data.data
-    } catch (error) {
-        console.log(error)
-        return {
-            payload: 'Error'
-        }
-    }
-})
-
 const createShow = createAsyncThunk("createShow", async (data) => {
     let headers = { headers: { Authorization: `Bearer ${data.token}` } }
     try {
@@ -185,7 +172,6 @@ const hotelActions = {
     deleteHotel,
     updateHotel,
     getShows,
-    getAllShows,
     createShow,
     updateShow,
     deleteShow
