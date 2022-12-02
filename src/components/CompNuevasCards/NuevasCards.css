@@ -1,0 +1,16 @@
+.MyNewCitiesCont{
+    
+    display: flex;
+    height: 5rem;
+    width: 120rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.MyNewCitiesCont h2{
+    font-size: xx-large;
+    color: blueviolet;
+    cursor: pointer;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+}

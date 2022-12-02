@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-
 import "./navbar.css";
 import { Link as LinkRouter } from 'react-router-dom'
-import { Link as Navlink } from 'react-router-dom'
 import ButtonExit from "../ButtonExit/ButtonExit";
 import { useSelector, useDispatch } from 'react-redux'
 import userActions from "../../redux/actions/userActions"
@@ -92,7 +90,7 @@ const SideNavBar = () => {
 
 
 					{online && (
-						<LinkRouter rute='/myprofile' text='MY PROFILE' >
+						<LinkRouter to='/Profile' text='MY PROFILE' >
 							<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} >  <button><img src="./icons/perfil123.png" alt="" />
 							</button>
 							</div>

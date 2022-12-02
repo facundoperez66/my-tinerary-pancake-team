@@ -1,64 +1,73 @@
 import { createReducer } from "@reduxjs/toolkit";
-import actionsCity from "../actions/cityActions";
+import cityActions from "../actions/cityActions";
 
-const { getCities, citiesFiltred, createCity, getCitiesAdmin, deleteCity, updateCity, getItineraries, updateItinerary, deleteItinerary, createItinerary } = actionsCity;
+const { getAllCities , getCitiesFiltred , createCity, getCitiesAdmin, deleteCity, updateCity, getItinerariesAll, getItineraries, updateItinerary, deleteItinerary, createItinerary} = cityActions;
 
-const iState = {
+const initialState = {
     cities: [],
-    checks: "",
-    name: "",
+    citiesAdmin: [],
+    itineraries: [],
+    itinerariesAll: [],
+    checks: '',
+    name: '',
     continent: [],
     checked: [],
-    citiesAdmin: [],
-    itineraries: []
 };
 
-const cityReducer = createReducer(iState, (builder) => {
-    builder
-        .addCase(getCities.fulfilled, (state, action) => {
-            let continent = [...new Set(action.payload.map(city => city.continent))]
-            return { ...state, cities: action.payload, continent: continent };
+const cityReducer = createReducer(initialState,
+    (builder) => {
+        builder
+            .addCase(getAllCities.fulfilled, (state, action) => {
+                let continentes = [...new Set(action.payload.map(city => city.continent))]
+                return { ...state, cities: action.payload , continent: continentes};
+            })
+            .addCase(getCitiesFiltred.fulfilled, (state, action) => {
+                return { ...state, cities: action.payload.res , checks: action.payload.checks , name: action.payload.name ,checked: action.payload.checked};
+            })
+            .addCase(createCity.fulfilled,(state, action) => {
+                if (action.payload.success) {
+                    return { ...state, cities: [...state.cities, action.payload.response] };
+                }
+            })
+            .addCase(getCitiesAdmin.fulfilled, (state, action) => {
+                return { ...state, citiesAdmin: action.payload};
+            })
+            .addCase(deleteCity.fulfilled, (state, action) => {
+                let city = state.citiesAdmin.filter(city => city._id !== action.payload.data._id)
+                return { ...state, citiesAdmin: city , cities: city};
+            })
+            .addCase(updateCity.fulfilled, (state, action) => {
+                let city = state.citiesAdmin.filter(city => city._id !== action.payload.data._id)
+                let cities = state.cities.filter(city => city._id !== action.payload.data._id)
+                return { ...state, citiesAdmin: [...city, action.payload.data], cities: [...cities, action.payload.data]};
+            })
+            .addCase(getItinerariesAll.fulfilled, (state, action) => {
+                return { ...state, itinerariesAll: action.payload};
+            })
 
-        })
-        .addCase(citiesFiltred.fulfilled, (state, action) => {
-            return { ...state, cities: action.payload.res, checks: action.payload.checks, name: action.payload.name, checked: action.payload.checked }
-        })
-        .addCase(createCity.fulfilled, (state, action) => {
-            if (action.payload.success) {
-                return { ...state, cities: [...state.cities, action.payload.response] };
-            }
-        })
-        
-        .addCase(getCitiesAdmin.fulfilled, (state, action) => {
-            return { ...state, citiesAdmin: action.payload};
-        })
-        .addCase(deleteCity.fulfilled, (state, action) => {
-            let city = state.citiesAdmin.filter(city => city._id !== action.payload.data._id)
-            return { ...state, citiesAdmin: city};
-        })
-        .addCase(updateCity.fulfilled, (state, action) => {
-            let city = state.citiesAdmin.filter(city => city._id !== action.payload.data._id)
-                return { ...state, citiesAdmin: [...city, action.payload.data]};
-        })
-        .addCase(getItineraries.fulfilled, (state, action) => {
-            return { ...state, itineraries: action.payload};
-        })
-        .addCase(updateItinerary.fulfilled, (state, action) => {
-            let itinerary = state.itineraries.filter(itinerary => itinerary._id !== action.payload.data._id)
-            return { ...state, itineraries: [...itinerary, action.payload.data]};
-        })
-        .addCase(deleteItinerary.fulfilled, (state, action) => {
-            let itinerary = state.itineraries.filter(itinerary => itinerary._id !== action.payload.data._id)
-            return { ...state, itineraries: itinerary};
-        })
-        .addCase(createItinerary.fulfilled, (state, action) => {
-            if (action.payload.success) {
-                return { ...state, itineraries: [...state.itineraries, action.payload.response] };
-            }
-        })
+            .addCase(getItineraries.fulfilled, (state, action) => {
+                if(action.payload.success){
+                    return { ...state, itineraries: action.payload.data};
+                }else{
+                    return { ...state};
+                }
+            })
+            .addCase(createItinerary.fulfilled, (state, action) => {
+                if (action.payload.success) {
+                    state.itineraries.push(action.payload.response)
+                }else{
+                    return state
+                }
+            })
+            .addCase(updateItinerary.fulfilled, (state, action) => {
+                let itinerary = state.itineraries.filter(itinerary => itinerary._id !== action.payload.data._id)
+                return { ...state, itineraries: [...itinerary, action.payload.data]};
+            })
+            .addCase(deleteItinerary.fulfilled, (state, action) => {
+                let itinerary = state.itineraries.filter(itinerary => itinerary._id !== action.payload.data._id)
+                return { ...state, itineraries: itinerary};
+            })
+    }
+);
 
-
-
-
-})
-export default cityReducer
+export default cityReducer;

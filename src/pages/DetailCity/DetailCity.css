@@ -1,7 +1,9 @@
 .CONTENEDOR-PADRE{
     width: 100%;
     min-height: 100vh;
-    background-color: #3E78B2;
+    background: url(https://img.freepik.com/vector-gratis/fondo-ciudad-noche-luces-neon_1441-2588.jpg);
+    background-repeat: initial;
+    background-size: cover;
 }
 
 
@@ -36,6 +38,7 @@
     align-items: center;
    height: 50rem;
    width: 50rem;
+   
 }
 
 .img-detail img{
@@ -80,3 +83,56 @@
     height: 40px;
     width: 80px;
 }
+
+
+
+.ParteSuperiorDetails123{
+    
+    display: flex;
+    color: white;
+    justify-content: center;
+}
+
+
+
+.ParteSuperior2Details123{
+    
+    width: 50rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+.ContenidoDeParteSup123{
+   
+    height: 30rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-size: xx-large;
+}
+
+
+
+.NuevaCajaDetails1234{
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10rem;
+    flex-direction: column;
+
+}
+
+
+.NuevaCajaDetails1234 button{
+    height: 3rem;
+    width: 9rem;
+    font-size: x-large;
+}
+
+

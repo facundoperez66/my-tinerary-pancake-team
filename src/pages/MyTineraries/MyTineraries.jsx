@@ -3,15 +3,15 @@ import { useDispatch, useSelector } from 'react-redux'
 import "./MyTineraries.css"
 import actionsCity from '../../redux/actions/cityActions'
 import ItineraryCardAdmin from '../../components/ItineraryCardAdmin/ItineraryCardAdmin'
+import CompNuevasCards from '../../components/CompNuevasCards/CompNuevasCards'
 
 
 
 export default function MyItineraries() {
     const dispatch = useDispatch()
-    const { itineraries } = useSelector(state => state.city)
-    const { getItineraries } = actionsCity	
-
+    const { itineraries} = useSelector(state => state.city)
     const { id} = useSelector(state => state.user)
+    const { getItineraries} = actionsCity
 
     useEffect(() => {
         dispatch(getItineraries(id))
@@ -19,24 +19,16 @@ export default function MyItineraries() {
     }, [])
 
     return (
-        <div className='CONTENEDOR-PADRRES123213213123123'>
-            <div className='Mytinerary123124214'>
-                <h2>MYTINERARY</h2>
-            </div>
-        <div className="cities-container12321421421214 flex m-t-16">
-           
-
-            <div className="cards-container12321321321321 container-fluid w-90 flex wrap gap-2 justify-center align-center">
-
-                {itineraries.length > 0 ? (
+        <div className="cities-container flex m-t-16">
+            <img className='imgFondo' src='../img/fondo.jpg' alt='fondo-img' />
+            <div className="cards-container container-fluid w-90 flex wrap gap-2 justify-center align-center">
+                <CompNuevasCards text='itinerary' reDirect='/newitinerary' />
+                {itineraries.length > 0 && (
                     itineraries.map((itinerary, index) => {
                         return <ItineraryCardAdmin itineraries={itinerary} key={index} idAdm={id} />
                     }))
-                    : (
-                        <img className='img-fluid' width='100%' src="./img/notsearch.png" alt="Not Found Search" />
-                    )}
+                }
             </div>
-        </div>
         </div>
     )
 }

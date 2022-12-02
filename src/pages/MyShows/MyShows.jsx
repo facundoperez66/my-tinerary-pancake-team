@@ -9,12 +9,12 @@ export default function MyShows() {
 
     const dispatch = useDispatch()
     const { shows } = useSelector(state => state.hotel)
-    const { getShow } = hotelActions
+    const { getShows } = hotelActions
 
     let admId = '636fe5cd55d86e11bfaebc4a'
 
     useEffect(() => {
-        dispatch(getShow(admId))
+        dispatch(getShows(admId))
         // eslint-disable-next-line
     }, [])
 

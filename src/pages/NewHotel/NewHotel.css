@@ -38,5 +38,17 @@ display: flex;
 justify-content: center;
 align-items: center;
 font-size: 2cm;
-background-color: #3E78B2;
+background-color: #004BA8;
+}
+
+
+.CONTENEDORPADRE2{
+    font-size: x-large;
+}
+
+
+
+#cityId123{
+    height: 3rem;
+    font-size: larger;
 }

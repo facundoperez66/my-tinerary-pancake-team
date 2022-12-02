@@ -5,13 +5,14 @@ import actionsCity from '../../redux/actions/cityActions'
 import Swal from 'sweetalert2'
 import Inputs from '../../components/inputs/Inputs'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 import BotonEnviar from "../../components/BotonEnviar/BotonEnviar"
 import "./NewItinerary.css"
 
 export default function NewItinerary() {
 
     const dispatch = useDispatch()
-    const { createItinerary } = actionsCity
+    const { createItinerary, getAllCities } = actionsCity
     const { cities } = useSelector(state => state.city)
     const { token, id } = useSelector(state => state.user)
     const navigate = useNavigate()
@@ -25,6 +26,13 @@ export default function NewItinerary() {
     const duration = useRef()
     const price = useRef()
     const cityId = useRef()
+
+    useEffect(() => {
+        dispatch(getAllCities())
+        // eslint-disable-next-line
+    }, [])
+
+
 
     async function enviarForm(e) {
         e.preventDefault()
@@ -54,7 +62,7 @@ export default function NewItinerary() {
                 })
                     .then(result => {
                         if (result.isConfirmed) {
-                            navigate(`/myItineraries`)
+                            navigate(`/MyTineraries`)
                         }
                     })
                 form.current.reset()
@@ -62,7 +70,7 @@ export default function NewItinerary() {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    
+                    html: res.payload.response.message.join(' <br> '),
                 })
             }
         } catch (error) {
@@ -71,18 +79,16 @@ export default function NewItinerary() {
     }
 
     return (
-        <main className="main-container-sign123214241421">
+        <main className="NewItinerary123">
             
             <div className="">
                 <form ref={form}>
-                    <div className="cardForm ">
-                        <div className='tituloitinerarios123123'>
-                        <h1 className=" titleForm">New Itinerary</h1>
-                        </div>
+                    <div className="">
+                        <h1 className="">New Itinerary</h1>
                         <div className=''>
                             
-                            <div className='contenidoItinerary123'>
-                                <div className="contenido12312421">
+                            <div className='cartaNewItinerary'>
+                                <div className="cartasNiTINERARY123">
                                     <Inputs  type="text" place="Name" id="name" refId={name} />
                                     <Inputs  type="text" place='Url Photo 1' id="Photo1" refId={photo1} />
                                     <Inputs  type="text" place='Url Photo 2' id="Photo2" refId={photo2} />
@@ -90,13 +96,12 @@ export default function NewItinerary() {
                                     <Inputs  type="text" place="Description" id="description" refId={description} />
                                     <Inputs  type="number" place="Price" id="price" refId={price} />
                                     <Inputs  type="number" place="Duration" id="duration" refId={duration} />
-                                    <label className='title-select' htmlFor='cityId'>Select a city :</label>
-                                    <select ref={cityId}  id="cityId">
+                                    <label className='' htmlFor='cityId'>Select a city :</label>
+                                    <select ref={cityId} className="" id="cityId">
                                         {cities.map(city => <option key={city._id} value={city._id}>{city.name}</option>)}
                                     </select>
-                               
-                                <BotonEnviar fx={enviarForm} texto='Create Itinerary' />
-                                 </div>
+                                </div>
+                                <BotonEnviar fx={enviarForm} texto='Create City' />
                             </div>
                         </div>
                     </div>

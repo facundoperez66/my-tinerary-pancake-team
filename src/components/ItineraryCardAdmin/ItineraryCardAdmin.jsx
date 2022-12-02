@@ -1,5 +1,6 @@
 import React from 'react'
-import { useDispatch} from 'react-redux'
+import { useEffect } from 'react'
+import { useDispatch, useSelector} from 'react-redux'
 import "./ItineraryCardAdmin.css"
 import Swal from 'sweetalert2'
 import actionsCity from '../../redux/actions/cityActions'
@@ -7,7 +8,15 @@ import actionsCity from '../../redux/actions/cityActions'
 export default function ItineraryCardAdmin(props) {
     let { itineraries } = props
     const dispatch = useDispatch()
-    const { deleteItinerary, updateItinerary } = actionsCity
+    const { getAllCities ,deleteItinerary, updateItinerary } = actionsCity
+    const { cities } = useSelector(state => state.city)
+    const { token } = useSelector(state => state.user)
+
+
+    useEffect(() => {
+        dispatch(getAllCities())
+        // eslint-disable-next-line
+    }, [])
 
     async function deleteAdmin() {
         try {
@@ -60,12 +69,13 @@ export default function ItineraryCardAdmin(props) {
                     let description = document.getElementById('description').value
                     let price = document.getElementById('price').value
                     let duration = document.getElementById('duration').value
-
+                    let city = document.getElementById('city').value
 
                     let data = {
                         id: itineraries._id,
+                        token,
                         itinerary: {
-
+                            cityId: city,
                         }
                     }
 
@@ -101,10 +111,12 @@ export default function ItineraryCardAdmin(props) {
                     if(duration !== ''){
                         data.itinerary.duration = duration
                     }
+                    dispatch(updateItinerary(data))
 
 
                     dispatch(updateItinerary(data))
-                    window.location.reload()
+
+                    return `The itinerary ${name} has been updated successfully.`
                 }
             })
 
@@ -121,6 +133,8 @@ export default function ItineraryCardAdmin(props) {
         return Math.floor(Math.random() * numero)
     }
 
+    let city = cities.find(city => city._id === itineraries.cityId)
+
     return (
         <div className="card-container678345234234 " >
             <div className="img-card-container">
@@ -130,6 +144,7 @@ export default function ItineraryCardAdmin(props) {
             </div>
             <div className="text-card">
                 <h3>{itineraries.name}</h3>
+                <h4>City: {city.name}</h4>
                 <p>Price: {itineraries.price}</p>
                 <p>Duration: {itineraries.duration}</p>
             </div>

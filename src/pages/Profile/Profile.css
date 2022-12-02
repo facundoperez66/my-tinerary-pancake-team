@@ -1,0 +1,126 @@
+:root {
+    --lighter: #FFFFFF;
+    --main: #3E78B2;
+    --expression: #004BA8;
+    --strong: #4A525A;
+    --live: #07070A;
+  }
+.tittle-profile{
+    display: flex;
+    justify-content: center;
+}
+
+.container-profilepage{
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 3 rem;
+    background-color: var(--main);
+}
+.img-profile img{
+    width: 300px;
+}
+.information-container12{
+    gap: 2 rem;
+}
+.information-container12 button{
+    padding: 10px;
+}
+.card-profilecontainer{
+    background-color: var(--lighter);
+    border-radius: 3px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.edits{
+    display: flex;
+    padding: 10px;
+
+}
+
+.edits p{
+    padding: 5px;
+    background-color: var(--live);
+    color: var(--lighter);
+}
+
+
+
+.Main-Profiles123{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ClaseContenedoraProfiles1{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(../../../public/img/fondo-img.jpg);
+    background-repeat: initial;
+    background-size: cover;
+    
+}
+
+
+
+.img-fluid123 {
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+}
+
+
+
+
+.cardForm1232331{
+    margin-top: 10rem;
+    border: 4px solid red;
+    background-color: white;
+    padding: 15px;
+
+}
+
+.claseImagenPerfil1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.flexgap-1{
+    
+    gap: 2rem  ;
+    
+}
+
+.flexgap-1 p{
+    color: blue;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+
+.contraseñaProfile1{
+    
+    display: flex;
+    justify-content: end;
+}
+
+.contraseñaProfile1 button{
+   
+    height: 40px;
+    width: 75px;
+}
+
+
+
+.img-reaction121412312312{
+    border: 4px solid red;
+}
+
+

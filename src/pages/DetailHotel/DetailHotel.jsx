@@ -5,14 +5,15 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BASE_URL } from '../../api/url';
 import CardDetails from '../../components/CardDetails2/CardDetails2';
+import CardHotel from '../../components/CardHotels/CardHotels';
 
-export default function DetailHotel() {
+export default function DetailsHotels() {
     const { id } = useParams()
 
     const [detailCards, setDetailCards] = useState([])
     const [events, setEvents] = useState([])
 
-    
+    let [mostrarEventoUno, setMostrarEventoUno] = useState(false)
 
     useEffect(() => {
         axios.get(`${BASE_URL}/api/hotels/${id}`)
@@ -23,54 +24,51 @@ export default function DetailHotel() {
         // eslint-disable-next-line
     }, [])
 
-    console.log(events)
 
 
-    
+    let mostrarEvento1 = () => {
+        setMostrarEventoUno(!mostrarEventoUno)
+    }
 
     if (detailCards.length !== 0) {
         return (
-            <div className='CONTENEDORMAYOR1234124'>
-              <div className='PARTESUPERIOR123213'>
-                <h2>DETAILS </h2>
-
-              </div>
-                
-                <div className="card-detail323423423">
-                    <div className="img-card1231231312">
-                    <img className="" src={detailCards.photo[0]} alt= {detailCards.name} />
-                    </div>
-                    <div className="text-card-detail flex column justify-center align-center bg-palette1 text-white gap-2 p-1">
-                        <div className="logo-details">
-                            <img className="img-w-5" src="./img/building1.png" alt="" />
+            <div className='HotelContenedorDetalles123'>
+                <div className="">
+                    <div className='ParteSuperiorHotelesDetalles1234'>
+                        <div className="ParteSuperiorDetails123">
+                            <img className="" src={detailCards.photo} alt={detailCards.name} />
                         </div>
-                        <div className="conenido-card123123123">
-                            <h1>{detailCards.name}</h1>
-                            <p>{detailCards.capacity}</p>
+                        <div className="">
+
+                            <div className="">
+                                <h1>Hotel: {detailCards.name}</h1>
+                                <p>Capacity: {detailCards.capacity}</p>
+                            </div>
                         </div>
-                        
-                        
+                    </div>
+                    <div className='BotonesDeCardHotelsDetails123'>
+                        <button className="">
+                            <p>Comments</p>
+                        </button>
+                        {events.length !== 0 && (
+                            <div className=''>
+                                <button onClick={mostrarEvento1} className="">
+                                    <p>Shows</p>
+                                </button>
+                            </div>
+                        )}
                     </div>
                 </div>
-                <div className='parteInferior'>
-                  <h2>EVENTS</h2>
-                </div>
-                <div className='cajadeEeventos'>
-
-                {
-            (events.length!=0)?events.map(e=><CardDetails key={e?._id} name={e?.name} photo={e?.photo} description={e?.description} price={e?.price} duration={e?.duration} />):console.log(true)
-        }
-          
-                </div>
-
-                <div className='botoncito12321'>
-                  <button>
-                    <p>Comment</p>
-                  </button>
+                <div className='ShowsSeparacion1234'>
+                    {mostrarEventoUno && (
+                        events?.length > 0 &&
+                        events?.map(i => {
+                            return <CardHotel key-={i._id} event={i} />
+                        })
+                    )}
                 </div>
             </div>
-                
-            
+
         )
     }
 

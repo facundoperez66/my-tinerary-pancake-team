@@ -16,7 +16,9 @@
     width: 100%;
     min-height: 100vh;
     
-    background-color:var(--lighter);
+    background: url(https://static.vecteezy.com/system/resources/previews/006/528/133/original/world-map-connection-background-map-design-technology-communication-connecting-vector.jpg);
+    background-repeat: initial;
+    background-size: cover;
     
     
 
@@ -60,7 +62,7 @@
     align-items: center;
     height: 30rem;
     flex-direction: column;
-    background-color: var(--main);
+    background-color: #004BA8;
     color: var(--lighter);
     
 }
@@ -75,4 +77,31 @@
 .img-fluid{
     margin-top: 5rem;
 
+}
+
+
+
+.pruebaChecks1234{
+   
+    font-size: xx-large;
+    gap: 2rem   
+}
+
+
+.search-input123{
+    height: 3rem;
+    font-size: x-large;
+    width: 30rem;
+}
+
+
+
+
+.img-NotFoundCities123214{
+    height: 30rem;
+    width: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8rem;
 }

@@ -5,7 +5,9 @@
 }
 
 .ContainerHome1{
-    background-color: #3E78B2;
+    background: url(https://p4.wallpaperbetter.com/wallpaper/135/688/985/man-suitcase-travel-dawn-wallpaper-preview.jpg);
+    background-repeat: initial;
+    background-size: cover;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -50,8 +52,10 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 1cm;
-   
+    font-size: xx-large;
+   color: white;
+   font-weight: bolder;
+
     padding-top: 20px;
 }
 
@@ -62,8 +66,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #4A525A;
-    border: 4px solid #004BA8;
+    background-color: none;
+    border: 4px solid white;
+    border-radius: 1rem;
     width: 10rem;
     height: 3rem;
     margin: 15px;
@@ -72,6 +77,13 @@
    
     
 }
+
+.SelecHome1 p{
+    color: white;
+}
+
+
+
 .title-logo{
     display: flex;
     flex-direction: column;

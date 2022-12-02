@@ -12,13 +12,15 @@
 }
 .card-container123{
     
-    width: 20 rem;
+    width: 20rem;
+
     background-color: var(--lighter);
     color: var(--live);
     margin: 15px;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
+    
     
     border-radius: 5px;
     overflow: hidden;

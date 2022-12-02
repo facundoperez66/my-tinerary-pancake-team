@@ -1,10 +1,11 @@
 import React from 'react';
 import "./DetailCity.css";
-import CardDetails from '../../components/CardDetails2/CardDetails2';
 import { useParams } from 'react-router';
 import { useState, useEffect } from 'react';
-import Events from "../../components/Itinerary/Itinerary";
 import axios from "axios"
+import {BASE_URL } from "../../api/url"
+import CardItinerary from '../../components/CardItinerary/CardItinerary';
+
 
 export default function DetailsCity() {
 
@@ -13,82 +14,97 @@ export default function DetailsCity() {
     const [detailCards, setDetailCards] = useState([])
     const [itinerary, setItinerary] = useState([])
 
-
-
-    
-
+    let [mostrarEventoUno, setMostrarEventoUno] = useState(false)
 
     useEffect(() => {
-      axios.get(`http://localhost:8080/api/cities/${id}`)
-      .then(res => setDetailCards(res.data.data))
+        axios.get(`${BASE_URL}/api/cities/${id}`)
+            .then(res => setDetailCards(res.data.data))
 
-      console.log(detailCards)
-
-
-      axios.get(`http://localhost:8080/api/itineraries?cityId=${id}`)
-      .then(res => setItinerary(res.data.data))
+        axios.get(`${BASE_URL}/api/itineraries?cityId=${id}`)
+            .then(res => setItinerary(res.data.data))
+        // eslint-disable-next-line
     }, [])
 
-    
-
-    
-
-    
-
-    
-
-    if (detailCards) {
-        return (
-            <div className='CONTENEDOR-PADRE'>
-              <div className='contenedor-details'>
-                <h2>DETAILS</h2>
-              </div>
-                <div className="detail-cities">
-                    <div className="img-detail">
-                      
-                        <img className="" src={detailCards.photo} alt= {detailCards.name} />
-                    </div>
-                    <div className="text-detail">
-                        <div className="logo-details">
-                            <img className="img-w-5" src="./img/building1.png" alt="" />
-                        </div>
-                        <div>
-                          <div>
-                            <h1>CITY: {detailCards.name}</h1>
-</div>
-<div>
-                            <p>CONTINENT: {detailCards.continent}</p>
-</div>
-<div>
-                            <p>POPULATION: {detailCards.population}</p>
-</div>
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-                
-                
-                <div className='parteInferior'>
-                  <h2>EVENTS</h2>
-                </div>
-                <div className='cajadeEeventos'>
-
-                {
-            (itinerary.length!=0)?itinerary.map(e=><CardDetails key={e?._id} name={e?.name} photo={e?.photo[0]} description={e?.description} price={e?.price} duration={e?.duration} />):console.log(true)
-        }
-          
-                </div>
-
-                <div className='botoncito12321'>
-                  <button>
-                    <p>Comment</p>
-                  </button>
-                </div>
-            </div>
-
-        
-        )
+    let mostrarEvento1 = () => {
+        setMostrarEventoUno(!mostrarEventoUno)
     }
 
+    if (detailCards.length !== 0) {
+        
+        let ciudades = [
+            'Egipto',
+            'Amsterdam',
+            'Madrid',
+            'Roma',
+            'Berlin',
+            'New York',
+            'Paris',
+            'Dubai',
+            'Barcelona',
+            'Viena',
+            'Milan',
+            'Londres',
+            'Munich',
+        ]
+        
+      return (
+        <>
+            <div className='CONTENEDOR-PADRE'>
+            <div className="">
+              <div className='ParteSuperiorDetails123'>
+                        <div className="img-detail">
+                            {ciudades.includes(detailCards.name) ? (
+                                <img className='' src={detailCards.photo} alt={detailCards.name} />
+                            ) : (
+                                console.log(true)
+                            )}
+
+</div>
+                        <div className="ParteSuperior2Details123">
+                            
+                            <div className="ContenidoDeParteSup123">
+                                <h1>City: {detailCards.name}</h1>
+                                <p>Continent: {detailCards.continent}</p>
+                                <p>Population: {detailCards.population}</p>
+                            </div>
+</div>
+</div>
+<div className='NuevaCajaDetails1234'>
+                            <button className="">
+                                <p>Comments</p>
+                            </button>
+                            {itinerary.length !== 0 && (
+                                <div className='pruebaDeBotonMore12324'>
+                                    <button onClick={mostrarEvento1} className="">
+
+
+                                    <p>Itineraries</p>
+                                    </button>
+                                </div>)}
+                               </div> 
+                        </div>
+                    
+                    {mostrarEventoUno && (
+                       itinerary?.length > 0 &&
+                       itinerary?.map(i => {
+                       return <CardItinerary key={i._id} itinerary={i} />
+                   })
+                   )}
+               </div>
+           </>
+       )
+   }
 }
+
+
+
+    
+
+    
+
+    
+
+
+
+
+   

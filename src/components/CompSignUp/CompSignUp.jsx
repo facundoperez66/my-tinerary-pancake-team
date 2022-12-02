@@ -8,80 +8,80 @@ import Swal from 'sweetalert2'
 import axios from 'axios'
 import { BASE_URL } from '../../api/url'
 
-export default function CompSignUp() {
+export default function SignUp() {
 
+    const form = useRef()
+    const name = useRef()
+    const lastName = useRef()
+    const photo = useRef()
+    const age = useRef()
+    const email = useRef()
+    const password = useRef()
+    const confirmPassword = useRef()
 
-const form = useRef()
-const name = useRef()
-const lastName = useRef()
-const photo = useRef()
-const age = useRef()
-const email = useRef()
-const password = useRef()
-const confirmPassword = useRef()
+    function enviarFormulario(event) {
+        event.preventDefault()
 
-function enviarFormulario(event) {
-    event.preventDefault()
-    if (password.current.value === confirmPassword.current.value) {
-        let newUser = {
-            name: name.current.value,
-            lastName: lastName.current.value,
-            photo: photo.current.value,
-            age: age.current.value,
-            email: email.current.value,
-            password: password.current.value,
-        }
-        Swal.fire({
-            icon: 'info',
-            title: `${newUser.name} ${newUser.lastName} Do you want to register with this information?`,
-            showConfirmButton: true,
-            showCancelButton: true,
-        })
-            .then(async result => {
-                if (result.isConfirmed) {
-                    let response = await axios.post(`${BASE_URL}/api/auth/sign-up`, newUser)
-                    if (response.data.success) {
-                        Swal.fire({
-                            title: 'Success!',
-                            text: `${newUser.name} your account was created successfully. Please check your mailbox ( ${newUser.email} ) and confirm your registration.`,
-                            icon: 'success',
-                            confirmButtonText: 'Ok'
-                        })
-                        form.current.reset()
+        if (password.current.value === confirmPassword.current.value) {
+            let newUser = {
+                name: name.current.value,
+                lastName: lastName.current.value,
+                photo: photo.current.value,
+                age: age.current.value,
+                email: email.current.value,
+                password: password.current.value,
+            }
+
+            Swal.fire({
+                icon: 'info',
+                title: `${newUser.name} ${newUser.lastName} Are you sure you want to register with this information?`,
+                showConfirmButton: true,
+                showCancelButton: true,
+            })
+                .then(async result => {
+                    if (result.isConfirmed) {
+                        let response = await axios.post(`${BASE_URL}/api/auth/sign-up`, newUser)
+                        if (response.data.success) {
+                            Swal.fire({
+                                title: 'Success!',
+                                text: `${newUser.name} your account was created successfully. Please check your mailbox ( ${newUser.email} ) and confirm your registration to finish it.`,
+                                icon: 'success',
+                                confirmButtonText: 'Ok'
+                            })
+                            form.current.reset()
+                        }
                     }
-                }
+                })
+                .catch(error => {
+                    if(Array.isArray(error.response.data.message)){
+                        Swal.fire({
+                            icon: "error",
+                            title: error.response.data.message.join(' <br> '),
+                            showConfirmButton: true,
+                        });
+                    }else{
+                        Swal.fire({
+                            icon: "error",
+                            title: error.response.data.message,
+                            showConfirmButton: true,
+                        });
+                    }
+                })
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Passwords do not match!',
             })
-            .catch(error => {
-                if(Array.isArray(error.response.data.message)){
-                    Swal.fire({
-                        icon: "error",
-                        title: error.response.data.message.join(' <br> '),
-                        showConfirmButton: true,
-                    });
-                }else{
-                    Swal.fire({
-                        icon: "error",
-                        title: error.response.data.message,
-                        showConfirmButton: true,
-                    });
-                }
-            })
-    } else {
-
-        Swal.fire({
-            icon: 'error',
-            title: 'Something went wrong',
-            text: 'Passwords do not match!',
-        })
+        }
     }
-
-}
 
   return (
       <div className='signup-container'>
           <div className='card-signup'>
+            <div className='signUpTitulo123'>
           <h3>Sign Up!</h3>
-          
+          </div>
   
           <div className='form-signin'>
       <form ref={form}>

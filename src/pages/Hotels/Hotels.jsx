@@ -1,4 +1,4 @@
-
+import "./Hotels.css"
 import React, { useRef, useState, useEffect } from 'react'
 import HotelCard from '../../components/HotelCard/HotelCard'
 import hotelActions from '../../redux/actions/hotelActions'
@@ -9,7 +9,7 @@ export default function Hotels() {
 
     const dispatch = useDispatch()
     const {hotels,name,order}=useSelector(state=>state.hotel)
-    const {getHotels,hotelsFiltred}= hotelActions
+    const {getAllHotels,getHotelsFiltered}= hotelActions
     const searchId = useRef()
     const selectId = useRef()
 
@@ -17,11 +17,11 @@ export default function Hotels() {
        if(name||order){
         let info = {name,order}
        
-       dispatch(hotelsFiltred(info))
+       dispatch(getHotelsFiltered(info))
        searchId.current.value= name
        searchId.current.value= order
         }else{
-            dispatch(getHotels())
+            dispatch(getAllHotels())
         }
     }, [])
 
@@ -35,7 +35,7 @@ export default function Hotels() {
         name:searchId.current.value,
         order
        }
-       dispatch(hotelsFiltred(info))
+       dispatch(getHotelsFiltered(info))
     }
     
 
@@ -46,10 +46,10 @@ export default function Hotels() {
             <div>
 <form>
 <label>
-<input type="search" name='search' id='search' placeholder='Search' ref={searchId} onChange={filterCheckCards} />
+<input className="SearchBarHotels213" type="search" name='search' id='search' placeholder='Search' ref={searchId} onChange={filterCheckCards} />
 </label>
 <label>
-<select name="select" defaultValue={'default'} onChange={filterCheckCards} ref={selectId}>
+<select className="SelectHotels1234" name="select" defaultValue={'default'} onChange={filterCheckCards} ref={selectId}>
 <option value="default" disabled>Select a order:</option>
 <option value="asc">Ascendent</option>
 <option value="desc">Descendent</option>

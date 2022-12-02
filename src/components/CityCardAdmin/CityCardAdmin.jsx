@@ -15,7 +15,7 @@ export default function CityCardAdmin(props) {
         try {
             Swal.fire({
                 title: 'Are you sure?',
-                text: "you won't be able to look it up later!",
+                text: "You won't be able to revert this!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -33,7 +33,6 @@ export default function CityCardAdmin(props) {
                         token
                     }
                     dispatch(deleteCity(data))
-                    
                 }
             })
 
@@ -52,7 +51,6 @@ export default function CityCardAdmin(props) {
                 confirmButtonText: 'Update',
                 html:
                     '<input placeHolder="Name" id="name" class="swal2-input">' +
-                    '<input placeHolder="Continent"id="continent" class="swal2-input">' +
                     '<input placeHolder="Photo Url"id="photo" class="swal2-input">' +
                     '<input placeHolder="Population"id="population" class="swal2-input">'+
                     `<select id='continent' class="swal2-input"> 
@@ -77,7 +75,7 @@ export default function CityCardAdmin(props) {
 
                         }
                     }
-                    console.log(token)
+
                     if(name !== ''){
                         data.citie.name = name
                     }
@@ -94,14 +92,15 @@ export default function CityCardAdmin(props) {
                     }
 
                     dispatch(updateCity(data))
-                    window.location.reload()
+
+                    return `The city ${name} has been updated successfully.`
                 }
             })
 
             if (formValues) {
                 Swal.fire(JSON.stringify(formValues))
             }
-
+            
         } catch (error) {
             console.log(error)
         }

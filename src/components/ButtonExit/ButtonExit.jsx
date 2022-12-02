@@ -7,7 +7,7 @@ export default function ButtonExit(props) {
 
     return (
         <NavLink to={rute} style={{ textDecoration: 'none' }}>
-            <div className='botoncitoLogOut'>
+            <div>
             <button  onClick={fx}>{text}</button>
             </div>
         </NavLink>

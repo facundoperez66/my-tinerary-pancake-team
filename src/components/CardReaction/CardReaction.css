@@ -1,0 +1,25 @@
+.img-reaction12312323{
+    
+    width: 10rem;
+    height: 10rem;
+}
+
+
+.CajaContenedoraDeReactionsProfile{
+    
+    width: 40rem;
+    height: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: xx-large;
+    color: white;
+}
+
+
+.FuncionDeletearReaction123{
+    color: blueviolet;
+    font-weight: bolder;
+    cursor: pointer;
+}

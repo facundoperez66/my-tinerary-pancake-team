@@ -47,3 +47,49 @@
     flex-direction: column;
     font-size: x-large;
 }
+
+
+
+
+
+
+.HotelContenedorDetalles123{
+    background: url(https://img.freepik.com/vector-gratis/fondo-ciudad-noche-luces-neon_1441-2588.jpg);
+    background-repeat: initial;
+    background-size: cover;
+    
+    min-height: 100vh;
+}
+
+.ParteSuperiorHotelesDetalles1234{
+    
+    height: 40rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+    color: white;
+    font-size: xx-large;
+}
+
+
+
+.BotonesDeCardHotelsDetails123{
+    
+    display: flex;
+    justify-content: space-around;
+}
+
+.BotonesDeCardHotelsDetails123 button{
+    height: 2rem;
+    width: 7rem;
+    font-size: x-large;
+}
+
+
+
+.ShowsSeparacion1234{
+    display: flex;
+}

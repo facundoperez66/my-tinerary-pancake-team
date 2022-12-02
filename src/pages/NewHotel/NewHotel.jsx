@@ -12,7 +12,7 @@ function NewHotel() {
     const dispatch = useDispatch()
     const {cities} = useSelector(state => state.city)
     const {createHotel} = hotelActions
-    const {getCities} = actionsCity
+    const {getAllCities} = actionsCity
     
 
     const form = useRef()
@@ -24,7 +24,7 @@ function NewHotel() {
     const cityId = useRef()
     
     useEffect(()=>{
-        dispatch(getCities())
+        dispatch(getAllCities())
 
     },[])
     async function sendForm (event){
@@ -54,6 +54,7 @@ function NewHotel() {
                 Swal.fire({
                     icon:'error',
                     title: 'error',
+                    html: res.payload.messages.join(' <br> '),
                     
                 })
             }
@@ -120,7 +121,7 @@ function NewHotel() {
                     <label for="cityId">
                         Select a City: 
                     </label>
-                    <select id="cityId" ref={cityId}>
+                    <select id="cityId123" ref={cityId}>
                     {cities.map(city => <option key={city._id} value={city._id}>{city.name}</option>)} 
                     </select>                   
 
