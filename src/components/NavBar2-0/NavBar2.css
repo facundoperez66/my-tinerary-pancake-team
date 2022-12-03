@@ -6,11 +6,11 @@
 .PruebaBotons2{
     
     height: 10rem;
-    width: 10rem;
+    
     display: flex;
     
     align-items: center;
-    width: 128rem;
+    width: 100%;
     gap: 2rem;
     
 

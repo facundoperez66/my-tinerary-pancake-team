@@ -278,61 +278,31 @@ export default function MyProfile() {
                   </div>
                </div>
             </form>
-            <div className='flex justify-center wrap gap-2'>
+            <div className='CajaContenedoraYsAlvadora'>
                {mostrarEventoUno && myReactions.length > 0 ? (
                   myReactions.map((reaction, index) => {
-                     console.log(reaction)
                      let classReaction
                      if (reaction.name === reaction.name) {
                         classReaction = `cardPerfil ${reaction.name}`
                      } else {
-                        classReaction = `cardPerfil ${reaction.name}`
+                        classReaction = `cardPerfil`
                      }
-
                      return (
-
-                        <div key={index} className="ReactionsCardsPruebaVer12">
-                           <div className="">
-
-
+                        <div key={index} className="">
+                           <div className={classReaction}>
                               <CardReactions reaction={reaction.showId || reaction.itineraryId} name={reaction.name} icon={reaction.icon} id={reaction._id} fxDelete={deleteReactionUser} />
-
                            </div>
                         </div>
-
                      )
                   })
-
                ) : mostrarEventoUno && (
-                  <div className='flex column align-center m-t-3 p-3'>
-
-                     <h4>You have no reactions, go to <Navlink to='/Hotels' style={{ textDecoration: 'none' }}> Hotels </Navlink> or <Navlink to='/Cities' style={{ textDecoration: 'none' }}> Hotels </Navlink> </h4>
+                  <div className=''>
+                     
+                     <h4>You have no reactions, go to <Navlink to='/hotels' style={{ textDecoration: 'none' }}> Hotels </Navlink> or <Navlink to='/cities' style={{ textDecoration: 'none' }}> Hotels </Navlink> to see the itineraries or shows and be able to react.</h4>
                   </div>
                )}
-
             </div>
-
-
-
-
-
-
-
-
-
-
-
          </div>
-
-
-
-
-
-
-
-
-
-
       </main>
    )
 }

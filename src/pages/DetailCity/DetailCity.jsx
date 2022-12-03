@@ -70,9 +70,7 @@ export default function DetailsCity() {
 </div>
 </div>
 <div className='NuevaCajaDetails1234'>
-                            <button className="">
-                                <p>Comments</p>
-                            </button>
+                            
                             {itinerary.length !== 0 && (
                                 <div className='pruebaDeBotonMore12324'>
                                     <button onClick={mostrarEvento1} className="">

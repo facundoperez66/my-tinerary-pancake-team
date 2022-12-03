@@ -1,16 +1,16 @@
 import { createReducer } from "@reduxjs/toolkit";
 import hotelActions from "../actions/hotelActions";
 
-const { getAllHotels , getHotelsFiltered, createHotel, getHotelsAdmin, deleteHotel, updateHotel, getShows, createShow, updateShow, deleteShow } = hotelActions;
+const { getAllHotels , getHotelsFiltered, createHotel, getHotelsAdmin, deleteHotel, updateHotel, getShows, getAllShows , createShow, updateShow, deleteShow } = hotelActions;
 
 const initialState = {
     hotels: [],
     hotelsAdmin: [],
+    allShows:[],
     shows: [],
     order: '',
     name: '',
-};
-
+}
 const hotelReducer = createReducer(initialState,
     (builder) => {
         builder
@@ -40,6 +40,9 @@ const hotelReducer = createReducer(initialState,
             .addCase(getShows.fulfilled, (state, action) => {
                 return { ...state, shows: action.payload};
             })
+            .addCase(getAllShows.fulfilled, (state, action) => {
+                return { ...state, allShows: action.payload};
+            })
             .addCase(createShow.fulfilled, (state, action) => {
                 if (action.payload.success) {
                     return { ...state, shows: [...state.shows, action.payload.response]};
@@ -54,7 +57,7 @@ const hotelReducer = createReducer(initialState,
                 return { ...state, shows: show};
             })
 
-    }
-);
-
-export default hotelReducer;
+        }
+        );
+        
+        export default hotelReducer;

@@ -47,9 +47,7 @@ export default function DetailsHotels() {
                         </div>
                     </div>
                     <div className='BotonesDeCardHotelsDetails123'>
-                        <button className="">
-                            <p>Comments</p>
-                        </button>
+                        
                         {events.length !== 0 && (
                             <div className=''>
                                 <button onClick={mostrarEvento1} className="">
