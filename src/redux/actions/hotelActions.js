@@ -22,12 +22,13 @@ const getHotelsFiltered = createAsyncThunk("getHotelsFiltered", async (data) => 
         const res = await axios.get(`${BASE_URL}/api/hotels?name=${data.name}&order=${data.order}`)
         const dataReduce = {
             res: res.data.response,
-            name: data.name,
+
             order: data.order
         }
         return dataReduce
     } catch (error) {
         console.log(error)
+
         return {
             payload: 'Error'
         }
@@ -77,6 +78,7 @@ const deleteHotel = createAsyncThunk("deleteHotel", async (data) => {
     try {
         const res = await axios.delete(`${BASE_URL}/api/hotels/${data.id}`, headers)
         return res.data
+
     } catch (error) {
         console.log(error)
         return {
@@ -86,11 +88,13 @@ const deleteHotel = createAsyncThunk("deleteHotel", async (data) => {
 })
 
 const updateHotel = createAsyncThunk("updateHotel", async (data) => {
+
     let headers = { headers: { Authorization: `Bearer ${data.token}` } }
     try {
         const res = await axios.patch(`${BASE_URL}/api/hotels/${data.id}`, data.hotels, headers)
         console.log(res.data)
         return res.data
+
     } catch (error) {
         console.log(error)
         return {
@@ -102,6 +106,19 @@ const updateHotel = createAsyncThunk("updateHotel", async (data) => {
 const getShows = createAsyncThunk("getShows", async (id) => {
     try {
         const res = await axios.get(`${BASE_URL}/api/shows?userId=${id}`)
+        return res.data.data
+
+    } catch (error) {
+        console.log(error)
+        return {
+            payload: 'Error'
+        }
+    }
+})
+
+const getAllShows = createAsyncThunk("getAllShows", async (id) => {
+    try {
+        const res = await axios.get(`${BASE_URL}/api/shows`)
         return res.data.data
     } catch (error) {
         console.log(error)
@@ -138,10 +155,12 @@ const createShow = createAsyncThunk("createShow", async (data) => {
 })
 
 const updateShow = createAsyncThunk("updateShow", async (data) => {
+
     let headers = { headers: { Authorization: `Bearer ${data.token}` } }
     try {
         const res = await axios.patch(`${BASE_URL}/api/shows/${data.id}`, data.show, headers)
         return res.data
+
     } catch (error) {
         console.log(error)
         return {
@@ -155,6 +174,7 @@ const deleteShow = createAsyncThunk("deleteShow", async (data) => {
     try {
         const res = await axios.delete(`${BASE_URL}/api/shows/${data.id}`, headers)
         return res.data
+
     } catch (error) {
         console.log(error)
         return {
@@ -162,7 +182,6 @@ const deleteShow = createAsyncThunk("deleteShow", async (data) => {
         }
     }
 })
-
 
 const hotelActions = {
     getAllHotels,
@@ -172,6 +191,7 @@ const hotelActions = {
     deleteHotel,
     updateHotel,
     getShows,
+    getAllShows,
     createShow,
     updateShow,
     deleteShow

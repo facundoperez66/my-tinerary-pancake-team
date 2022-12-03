@@ -63,12 +63,17 @@ export default function Reaction(props) {
                                 res ? (
                                     <div className='asdasdasdasdsa'>
                                         {react.userId.length > 0 && (
-                                        <div>{react.userId.map(user => {
-                                            return (<div className='FotoPresentacionPeque'>
-                                                <img className='fotoDeUsuarioReaccion123' src={user.photo} alt="" />
-                                                <p>{user.name} {user.lastName}</p>
-                                            </div>)
-                                        })}</div>
+                                       <div>
+                                       {react.userId.map((user, index) => {
+                                           index <= 2 &&(
+                                                   <>
+                                                   <div className='flex'>
+                                                       <img className='img-fluid imgLike' src={user.photo} alt="" />
+                                                       <p>{user.name} {user.lastName}</p>
+                                                   </div>
+
+                                               </>)
+                                       })}<p>...</p></div>
                                         )}
                                         <img onClick={press} width='30px' name={react.name} src={react.icon} alt="icon" />
                                         <p>{reaction.lengthOfReactions[react.name]}</p>
@@ -79,7 +84,7 @@ export default function Reaction(props) {
                                             react.userId.length > 0 && (
                                                 <div>{react.userId.map(user => {
                                                     return (<div className=''>
-                                                        <img className='FotoGrandePresentacion' src={user.photo} alt="" />
+                                                        
                                                         <p>{user.name} {user.lastName}</p>
                                                     </div>)
                                                 })}</div>

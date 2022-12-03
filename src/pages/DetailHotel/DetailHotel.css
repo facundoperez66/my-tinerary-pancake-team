@@ -86,6 +86,7 @@
     height: 2rem;
     width: 7rem;
     font-size: x-large;
+    
 }
 
 
@@ -93,4 +94,5 @@
 .ShowsSeparacion1234{
     display: flex;
     justify-content: space-between;
+    
 }

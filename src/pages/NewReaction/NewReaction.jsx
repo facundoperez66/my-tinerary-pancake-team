@@ -6,8 +6,8 @@ import Swal from 'sweetalert2'
 import BotonEnviarForm from '../../components/BotonEnviar/BotonEnviar'
 import Inputs from '../../components/inputs/Inputs'
 import { useRef, useEffect, useState } from 'react'
-import cityActions from '../../redux/actions/cityActions'
-import hotelActions from '../../redux/actions/hotelActions'
+import cityActions from "../../redux/actions/cityActions"
+import hotelActions from "../../redux/actions/hotelActions"
 
 
 export default function NewReaction() {
@@ -18,7 +18,7 @@ export default function NewReaction() {
     const eventsAll = itinerariesAll.concat(allShows)
     const { token } = useSelector(state => state.user)
     const { getItinerariesAll } = cityActions
-    const { getShows } = hotelActions
+    const { getAllShows } = hotelActions
     const { createReaction } = reactionActions
 
     const form = useRef()
@@ -26,18 +26,18 @@ export default function NewReaction() {
     const icon = useRef()
     const iconBack = useRef()
     const eventId = useRef()
-    const itineraryId = useRef()
-    
 
     useEffect(() => {
         dispatch(getItinerariesAll())
-        
+        dispatch(getAllShows())
         // eslint-disable-next-line
     }, [])
 
     function enviarForm(e) {
         e.preventDefault()
-        
+        let itinerary = itinerariesAll.find(itinerary => itinerary._id === eventId.current.value)
+        let show = allShows.find(show => show._id === eventId.current.value)
+
         let datos = {
             token,
             reaction: {
@@ -48,11 +48,12 @@ export default function NewReaction() {
             }
         }
 
-        
-
-
-        
-
+        if (itinerary) {
+            datos.reaction.itineraryId = eventId.current.value
+        } else if (show) {
+            datos.reaction.showId = eventId.current.value
+        }
+        // Alerta preguntando si desea crear la reacción
         Swal.fire({
             icon: 'info',
             title: 'Are you sure you want to create this reaction?',
@@ -92,20 +93,18 @@ export default function NewReaction() {
             <div className="">
                 <form ref={form}>
                     <div className="CardNewReactions123">
-                        <h1 className=" titleForm">New Reaction</h1>
+                        <h1 className="text-palette2 titleForm">New Reaction</h1>
                         <div className='oiqjwodqwdwqdwqwdwq'>
-                            
+
                             <div className='CartaMayorNewReacions123123'>
                                 <div className="CartaPersonalizar1234123">
-                                    <Inputs  type="text" place="Reaction Name" id="name" refId={name} />
-                                    <Inputs  type="text" place='Url Icon' id="icon" refId={icon} />
-                                    <Inputs  type="text" place='Url Icon Back' id="iconBack" refId={iconBack} />
-                                    
+                                    <Inputs classN="signup-input" type="text" place="Reaction Name" id="name" refId={name} />
+                                    <Inputs classN="signup-input" type="text" place='Url Icon' id="icon" refId={icon} />
+                                    <Inputs classN="signup-input" type="text" place='Url Icon Back' id="iconBack" refId={iconBack} />
                                     <label className='title-select' htmlFor='cityId'>Select a itinerary o show :</label>
-                                    <select ref={itineraryId} className="signup-input select" id="eventId">
-                                    {itinerariesAll.map(event => <option key={event._id} value={event._id}>{event.name}</option>)}
+                                    < select ref={eventId} className="signup-input select" id="eventId">
+                                        {eventsAll.map(event => <option key={event._id} value={event._id}>{event.name}</option>)}
                                     </select>
-                                    
                                 </div>
                                 <BotonEnviarForm fx={enviarForm} texto='Create Reaction' />
                             </div>
